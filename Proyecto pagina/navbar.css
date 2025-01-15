@@ -1,0 +1,200 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+/* Estilo para el logo */
+.logo {
+    width: 100px;  /* Ajusta el tamaño del logo a 100px de ancho */
+    height: 100px; /* Ajusta el tamaño del logo a 100px de alto */
+    margin-right: 15px; /* Espacio entre el logo y los enlaces */
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el navbar esté encima de otros elementos */
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Sección izquierda (Logo y Menú) */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.left-section .logo {
+    width: 50px; /* Tamaño reducido del logo */
+    height: auto;
+    margin-right: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #007bff;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+/* Sección derecha (Búsqueda, Carrito, Perfil) */
+.right-section {
+    display: flex;
+    align-items: center; /* Alineación vertical correcta */
+    gap: 10px; /* Espaciado entre los elementos */
+}
+
+.search-bar {
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 180px; /* Ajusta el tamaño de la barra de búsqueda */
+}
+
+.cart-icon, .profile-icon {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.cart-icon:hover, .profile-icon:hover {
+    color: #007bff;
+}
+#search-results-container {
+    position: fixed;
+    top: 60px; /* Ajusta según la posición de tu barra de búsqueda */
+    left: 10%;
+    right: 10%;
+    max-height: 300px;
+    overflow-y: auto; /* Permite desplazamiento vertical si hay demasiados productos */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Asegura que las secciones estén apiladas */
+    gap: 15px; /* Espaciado entre la sección de productos y el botón */
+}
+.hidden {
+    visibility: hidden;
+}
+
+.search-results-row {
+    display: flex;
+    flex-wrap: nowrap; /* Mantener los productos en una fila horizontal */
+    gap: 15px; /* Espaciado entre productos */
+    overflow-x: auto; /* Permite desplazamiento horizontal para los productos */
+}
+
+.search-result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto; /* Evita que los productos se reduzcan */
+    width: 150px; /* Ancho de cada producto */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.search-result-item:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.search-result-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #555;
+}
+.no-results-message {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+.product-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.product-link:hover {
+    color: #0056b3;
+}
+.search-results-footer {
+    display: flex;
+    justify-content: center; /* Centrar el botón en la sección */
+    margin-top: 15px;
+}
+.search-results-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    overflow-x: auto; /* Desplazamiento horizontal si los productos exceden */
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+}
+
+.view-more-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.view-more-button:hover {
+    background-color: #0056b3;
+}

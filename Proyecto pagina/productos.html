@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="productos.css">
+    <link rel="stylesheet" href="navbar.css">
+    <script src="productos.js" defer></script>
+    <script src="navbar.js" defer></script>
+    <script src="https://kit.fontawesome.com/2d76f2bdc1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMNtw8ER3F6tGprcjba5jrh0JpB7Mqao09SNEz" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Barra principal -->
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="left-section">
+                <a href="index1.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index1.html">HOME</a></li>
+                    <li><a href="tutorial.html">TUTORIAL</a></li>
+                    <li><a href="productos.html" class="active">PRODUCTOS</a></li>
+                    <li><a href="contactos.html">CONTACTOS</a></li>
+                </ul>
+            </div>
+            <div class="right-section">
+                <input type="text" placeholder="Buscar..." class="search-bar">
+                <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="perfil.html" class="profile-icon"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </header>  
+
+    <!-- Contenido principal -->
+    <main>
+        <h1 class="page-title">Productos</h1>
+        <div class="products-container" id="products-container">
+            <!-- Los productos se generarán dinámicamente aquí -->
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,161 @@
+/* Reset básico 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+*/
+/* Fondo general de la página */
+body {
+    background-image: url('images/background-image.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Necesario para que el pseudo-elemento funcione */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Hereda la misma imagen de fondo */
+    background-position: inherit;
+    background-size: inherit;
+    background-repeat: inherit;
+    filter: blur(5px); /* Desenfoque */
+    z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+}
+
+.page-title {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    font-size: 2.5rem; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Negrita para destacar */
+}
+
+/* Sección de Productos */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-item {
+    background-color: transparent; /* Fondo transparente general */
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    background-color: rgba(253, 228, 207, 1); /* Fondo crema */
+    width: 300px; /* Ancho fijo */
+    height: 400px; /* Altura fija */
+    display: flex; /* Para centrar la imagen si es más pequeña */
+    justify-content: center;
+    align-items: center;    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    margin: 0 auto; /* Centra el contenedor en el eje horizontal */
+}
+
+.product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que llene el contenedor sin deformarse */
+    border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
+}
+
+
+
+.info-container {
+    background-color: rgba(255, 255, 255, 1); /* Fondo rosa para el texto */
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-item p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.product-item button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Sin fondo */
+    color: #ffffff; /* Color del texto */
+    border: 2px solid ; /* Contorno definido */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin: 5px;
+    text-align: center;
+}
+
+.product-item button:hover {
+    background-color:  #0056b3; /* Fondo negro al pasar el mouse */
+    color: #fff; /* Texto blanco al pasar el mouse */
+    
+}
+
+/* Botón Más detalles */
+.more-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent; /* Sin fondo */
+    color: black;
+    border: 2px solid black; /* Bordes negros */
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.more-details:hover {
+    background-color: black; /* Fondo negro al pasar el mouse */
+    color: white; /* Texto blanco al pasar el mouse */
+}
+
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .products-container {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+}

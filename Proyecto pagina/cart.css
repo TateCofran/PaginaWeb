@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 70px;
+}
+
+.cart-page-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo para las secciones del carrito */
+.contact-section, .order-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 48%;
+}
+
+.contact-section h3, .order-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* Estilo para las secciones del carrito */
+.contact-section, .order-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 48%;
+}
+
+.contact-section h3, .order-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo del formulario en la sección de contacto */
+.contact-section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+}
+
+.form-group.half-width {
+    flex: 1 1 calc(45% - 20px);
+}
+
+.form-group.quarter-width {
+    flex: 1 1 calc(20% - 20px);
+}
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    padding: 8px; /* Reducir el padding interno para que los campos sean más pequeños */
+    font-size: 13px; /* Reducir el tamaño de fuente */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+input[type="tel"] {
+    padding-left: 30px;
+    /*background-image: url('images/phone-icon.png'); /* Cambiar según el ícono */
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+/*Estilo de la sección de facturacion*/
+.hidden {
+    display: none;
+}
+
+.factura-section {
+    margin-bottom: 30px;
+
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo de la sección del pedido */
+.order-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.item-image img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#cart-items .item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.item-details {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.item-price p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ff0000;
+}
+
+.subtotal {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.subtotal h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.subtotal p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-link {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.action-link:hover {
+    background-color: #0056b3;
+}
+
+#clear-cart {
+    background-color: #dc3545;
+}
+
+#clear-cart:hover {
+    background-color: #a71d2a;
+}
+
+#send-to-whatsapp {
+    background-color: #28a745;
+}
+
+#send-to-whatsapp:hover {
+    background-color: #1e7e34;
+}
+.shipping-section, .optional-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.shipping-section h3, .optional-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.shipping-section .form-group, .optional-section .form-group {
+    margin-bottom: 15px;
+}
+
+.shipping-section label, .optional-section label {
+    font-size: 14px;
+    color: #333;
+}
+
+.optional-section textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+.hidden {
+    display: none;
+}
+
+#flex-list-container {
+    margin-top: 10px;
+}
+.field-error {
+    border: 2px solid red; /* Resaltar el borde en rojo */
+    background-color: #ffe5e5; /* Fondo ligeramente rojo */
+}

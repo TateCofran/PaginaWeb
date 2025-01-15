@@ -1,0 +1,350 @@
+body {
+    position: relative; /* Necesario para el pseudo-elemento */
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9); /* Color de respaldo */
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background-image.png'); /* Ruta de tu imagen de fondo */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(10px); /* Aplicar efecto de desenfoque */
+    z-index: -1; /* Asegura que quede detrás del contenido */
+}
+
+/* Opcional: Añadir un efecto translúcido a las secciones principales */
+.main-content {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor principal */
+.product-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.product-pack {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+.product-description, .product-description2 {
+    font-size: 18px;
+    color: #333;
+}
+.product-price{
+    font-size: 26px;
+}
+/* Galería de miniaturas */
+.thumbnail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+    border-color: #007bff;
+}
+
+/* Imagen principal del producto */
+.product-image {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de información del producto */
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+#product-colors {
+    margin-top: 20px;
+}
+
+#product-colors h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#color-list {
+    list-style: none; /* Elimina los puntos de lista */
+    padding-left: 0; /* Elimina el margen izquierdo */
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#color-list h4 {
+    font-weight: bold; /* Títulos en negrita */
+    font-size: 14px; /* Tamaño de fuente ajustado */
+    color: #333; /* Color del título */
+    margin-bottom: 10px; /* Espaciado debajo del título */
+    margin-top: 20px; /* Espaciado entre categorías */
+}
+
+#color-list ul {
+    padding-left: 0; /* Elimina la indentación */
+    display: flex; /* Muestra los colores en línea */
+    flex-wrap: wrap; /* Permite que los colores se ajusten en varias filas */
+    gap: 10px; /* Espaciado entre los colores */
+}
+
+#color-list li {
+    font-size: 14px;
+    color: #555; /* Color del texto */
+}
+
+
+/* Botones de acción */
+.product-actions {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: left; /* Centra los elementos horizontalmente */
+    gap: 15px; /* Espaciado entre el control de cantidad y los botones */
+    margin-top: 20px;
+}
+
+/* Control de cantidad */
+.quantity-control {
+    display: flex;
+    justify-content: left;
+    align-items: center; /* Alinea los botones e input verticalmente */
+    gap: 5px; /* Espaciado entre los botones e input */
+}
+
+.quantity-control input[type="number"] {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.quantity-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd;
+}
+
+/* Botones de acción */
+.buttons-container {
+    display: flex;
+    gap: 20px; /* Espaciado entre los botones */
+    justify-content: left; /* Centra los botones */
+    width: 100%;
+}
+
+.buy-now {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now:hover {
+    background-color: #0056b3;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+.add-to-cart i {
+    margin-right: 5px; /* Espaciado entre el ícono y el texto */
+}
+
+/* Estilo del cuadro emergente */
+.popup {
+    display: flex;
+    flex-direction: column; /* Elementos en columna */
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: 1000;
+    width: 400px; /* Ajusta según sea necesario */
+    max-width: 90%;
+}
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-animation {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;    /* Centra verticalmente */
+    margin-bottom: 20px;    /* Espaciado inferior */
+    width: 100%;            /* Asegura que tome todo el ancho del contenedor */
+    height: 100px;          /* Altura fija */
+}
+
+.popup-animation dotlottie-player {
+    width: 100px;  /* Ancho de la animación */
+    height: 100px; /* Altura de la animación */
+}
+
+
+.popup-product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0 20px;
+}
+
+.popup-product-info img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.popup-product-info h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    color: #333;
+    flex: 1;
+}
+
+.popup-product-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    text-align: right;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.popup-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    flex: 1;
+}
+
+#continue-shopping {
+    background-color: #007bff;
+    color: white;
+}
+
+#continue-shopping:hover {
+    background-color: #0056b3;
+}
+
+#go-to-cart {
+    background-color: #28a745;
+    color: white;
+}
+
+#go-to-cart:hover {
+    background-color: #1e7e34;
+}
+
+
+@media (max-width: 768px) {
+    .product-actions {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: center; /* Centra los elementos */
+    }
+
+    .product-actions > * {
+        flex: 1 1 auto; /* Permite que los elementos se ajusten al ancho disponible */
+        text-align: center;
+    }
+
+    .quantity-control {
+        justify-content: center; /* Centra el control de cantidad */
+    }
+}

@@ -1,0 +1,170 @@
+[
+    {
+        "flex": "Zárate",
+        "precio": "7200"
+    },
+    {
+        "flex": "Luján",
+        "precio": "7200"
+    },
+    {
+        "flex": "Cañuelas",
+        "precio": "7200"
+    },
+    {
+        "flex": "Marcos Paz",
+        "precio": "7200"
+    },
+    {
+        "flex": "Guernica",
+        "precio": "7200"
+    },
+    {
+        "flex": "San Vicente",
+        "precio": "7200"
+    },
+    {
+        "flex": "Escobar",
+        "precio": "7200"
+    },
+    {
+        "flex": "Gral. Rodríguez",
+        "precio": "7200"
+    },
+    {
+        "flex": "Campana",
+        "precio": "7200"
+    },
+    {
+        "flex": "Derqui",
+        "precio": "7200"
+    },
+    {
+        "flex": "Berisso",
+        "precio": "7200"
+    },
+    {
+        "flex": "Ing. Maschwitz",
+        "precio": "7200"
+    },
+    {
+        "flex": "Ensenada",
+        "precio": "7200"
+    },
+    {
+        "flex": "Del Viso",
+        "precio": "7200"
+    },
+    {
+        "flex": "Villa Rosa",
+        "precio": "7200"
+    },
+    {
+        "flex": "Pilar",
+        "precio": "7200"
+    },
+    {
+        "flex": "La Plata",
+        "precio": "7200"
+    },
+    {
+        "flex": "Berazategui",
+        "precio": "6100"
+    },
+    {
+        "flex": "Esteban Echeverría",
+        "precio": "6100"
+    },
+    {
+        "flex": "Ezeiza",
+        "precio": "6100"
+    },
+    {
+        "flex": "Florencio Varela",
+        "precio": "6100"
+    },
+    {
+        "flex": "Hurlingham",
+        "precio": "6100"
+    },
+    {
+        "flex": "Ituzaingó",
+        "precio": "6100"
+    },
+    {
+        "flex": "José C. Paz",
+        "precio": "6100"
+    },
+    {
+        "flex": "La Matanza",
+        "precio": "6100"
+    },    
+    {
+        "flex": "Malvinas Argentinas",
+        "precio": "6100"
+    },
+    {
+        "flex": "Merlo",
+        "precio": "6100"
+    },
+    {
+        "flex": "Moreno",
+        "precio": "6100"
+    },
+    {
+        "flex": "Morón",
+        "precio": "6100"
+    },
+    {
+        "flex": "San Fernando",
+        "precio": "6100"
+    },
+    {
+        "flex": "San Isidro",
+        "precio": "6100"
+    },
+    {
+        "flex": "San Martín",
+        "precio": "6100"
+    },
+    {
+        "flex": "San Miguel",
+        "precio": "6100"
+    },
+    {
+        "flex": "Tigre",
+        "precio": "6100"
+    },
+    {
+        "flex": "Tres de Febrero",
+        "precio": "6100"
+    },
+    {
+        "flex": "Vicente López",
+        "precio": "6100"
+    },
+    {
+        "flex": "Almirante Brown",
+        "precio": "4450"
+    },
+    {
+        "flex": "CABA",
+        "precio": "4450"
+    },
+    {
+        "flex": "Avellaneda",
+        "precio": "3000"
+    },    
+    {
+        "flex": "Lomas de Zamora",
+        "precio": "3000"
+    },
+    {
+        "flex": "Quilmes",
+        "precio": "3000"
+    },
+    {
+        "flex": "Lanús",
+        "precio": "3000"
+    }
+]

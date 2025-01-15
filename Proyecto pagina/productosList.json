@@ -1,0 +1,100 @@
+[
+    {
+        "id": "alcancias",
+        "titulo": "Alcancias",
+        "images": "images/products/alcancias/",
+        "precio": 849,
+        "descripcion": "Medidas: Diámetro 8,5 cm y alto 9 cm.",
+        "colores": {
+            "pasteles": ["Celeste", "Lila", "Rosa", "Verde"],
+            "fuertes": ["Amarillo", "Azul", "Blanco", "Celeste", "Violeta", "Rojo", "Rosa", "Turquesa", "Verde", "Naranja", "Negro"]
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 150
+    },
+    {
+        "id": "botellas750cc",
+        "titulo": "Botellas 750cc",
+        "images": "images/products/Botellas750cc/",
+        "precio": 899,
+        "descripcion": "Medidas: 24x7, 750cc.",
+        "colores": {
+            "pasteles": ["Celeste", "Lila", "Rosa", "Verde"],
+            "fuertes": ["Blanco", "Negro", "Aqua", "Rojo", "Verde", "Celeste", "Azul", "Turquesa", "Naranja", "Rosa", "Amarillo", "Lila"]
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 150
+    },
+    {
+        "id": "botellas500cc",
+        "titulo": "Botellas 500cc",
+        "images": "images/products/Botellas500cc/",
+        "precio": 859,
+        "descripcion": "Medidas: 19x6cm, 500cc.",
+        "colores": {
+            "pasteles": ["Verde Agua", "Lila", "Rosa", "Celeste"],
+            "fuertes": ["Blanco", "Naranja", "Negro", "Verde", "Rojo", "Celeste", "Azul", "Turquesa", "Rosa", "Amarillo"]
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 150
+    },
+    {
+        "id": "botellas750cc-ancha",
+        "titulo": "Botellas 750cc - Boca ancha",
+        "images": "images/products/Botellas750cc-ancha/",
+        "precio": 889,
+        "descripcion": "Medidas: 24x7, 750cc.",
+        "colores": ["Verde Pastel", "Aqua", "Naranja", "Turquesa", "Rosa Pastel", "Amarillo", "Verde Manzana", "Verde", "Rojo", "Negro", "Lila", "Azul"],
+        "cantidadMinima": 10,
+        "cantidadMaxima": 150
+    },
+    {
+        "id": "mini-botellas",
+        "titulo": "Mini Botellas con Sorbetes",
+        "images": "images/products/mini-botellas/",
+        "precio": 759,
+        "descripcion": "Medidas: 14cm de alto, 190cc.",
+        "colores": {
+            "tapas": {
+                "fuertes": ["Azul", "Celeste", "Verde", "Amarillo", "Rojo"],
+                "pasteles": ["Rosa", "Lila", "Celeste", "Salmón", "Amarillo", "Verde"]
+            },
+            "sorbetes": ["Blanco", "Negro"]
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 150 
+    },
+    {
+        "id": "mini-botellas-corona",
+        "titulo": "Mini Botellas - Tapa ciega",
+        "images": "images/products/mini-botellas-corona/",
+        "precio": 819,
+        "descripcion": "Medidas: 14cm de alto, 190cc.",
+        "colores": {
+            "pasteles": ["Naranja", "Amarillo", "Celeste", "Rosa", "Lila"]
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 150
+    },
+    {
+        "id": "bolsas-totebag",
+        "titulo": "Bolsas Tote Bag",
+        "images": "images/products/bolsas-totebag/",
+        "precio": 998,
+        "descripcion": "Medidas 15 alto x 20. Fuelle , base 10cm aprox.",
+        "pack":"Pack de 10 bolsas",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10 
+    },
+    {
+        "id": "bolsas-8x10-",
+        "titulo": "Bolsas lienzo 8x10",
+        "images": "images/products/bolsas-8x10-/",
+        "precio": 339,
+        "descripcion": "Medidas: 10cm de alto y 8cm de ancho aprox.",
+        "descripcion2": "Material: Tela - Algodón Color Crudo. Soga ajustable.",
+        "pack": "Pack de 10 bolsas",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10  
+    }
+]

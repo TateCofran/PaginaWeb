@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalos del cielo</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="navbar.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2d76f2bdc1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Barra principal -->
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="left-section">
+                <a href="index1.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index1.html">HOME</a></li>
+                    <li><a href="tutorial.html">TUTORIAL</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="contactos.html">CONTACTOS</a></li>
+                </ul>
+            </div>
+            <div class="right-section">
+                <input type="text" placeholder="Buscar..." class="search-bar">
+                <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="perfil.html" class="profile-icon"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </header>    
+
+<!-- Sección del slider -->
+<section class="slider">
+    <div class="slider-container">
+        <img src="images/Slider/Botellas 750cc.jpg" alt="Botellas 750cc" class="slider-image">
+        <img src="images/Slider/Tote Bag.jpg" alt="Tote Bag" class="slider-image">
+        <img src="images/Slider/Vasos.jpg" alt="Vasos" class="slider-image">
+    </div>
+</section>
+
+
+<!-- Sección Productos Destacados -->
+<section class="products-section">
+    <h1 class="page-title">Productos Destacados</h1>
+    <div id="featured-products-container" class="products-container"></div>
+        <!-- Los productos destacados se generarán dinámicamente aquí -->
+</section>
+
+<script src="productosDestacados.js" defer></script>
+
+    <!-- Nosotros -->
+    <section class="nosotros">
+        <div class="nosotros-container">
+            <!-- Primera imagen: Instagram -->
+            <div class="nosotros-item">
+                <img src="images/nosotros/instagram.jpg" alt="Instagram" class="nosotros-img">
+                <a href="https://www.instagram.com/regdelcielo/" target="_blank" class="btn-filled">Seguinos en Instagram</a>
+            </div>
+    
+            <!-- Segunda imagen: Atención al Cliente -->
+            <div class="nosotros-item">
+                <img src="images/nosotros/atencioncliente.jpg" alt="Atención al Cliente" class="nosotros-img">
+                <p class="info-text">
+                    Horario de atención y retiro:<br>
+                    Lunes a viernes de 10 a 14hs.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Tutorial -->
+    <section class="tutorial">
+        <h1>Cómo utilizar nuestra página?</h1>
+        <p>5 sencillos pasos para que puedas comenzar a utilizarla</p>
+
+        <div class="row">
+            <div class="tutorial-col">
+                <h3>Primer paso</h3>
+                <p>Elige un producto y la cantidad que necesites</p>
+            </div>
+            <div class="tutorial-col">
+                <h3>Segundo paso</h3>
+                <p>Una vez elegidos los productos vas al carrito</p>
+            </div>
+            <div class="tutorial-col">
+                <h3>Tercer paso</h3>
+                <p>Ingresa datos personales y dirección donde quieres que te llegue el pedido</p>
+            </div>
+            <div class="tutorial-col">
+                <h3>Cuarto paso</h3>
+                <p>Se te redireccionará a WhatsApp con el pedido y los datos solicitados</p>
+            </div>
+            <div class="tutorial-col">
+                <h3>Último paso</h3>
+                <p>Espera a que confirmemos tu pedido</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200";
+        }
+    </script> -->
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const productImageContainer = document.getElementById('product-id');
+    const productImages = productImageContainer
+        ? productImageContainer.querySelectorAll('img')
+        : [];
+    let currentImageIndex = 0;
+    let interval;
+
+    function updateProductImage() {
+        productImages.forEach((image, index) => {
+            image.style.opacity = (index === currentImageIndex) ? 1 : 0;
+        });
+    }
+
+    function startImageTransition() {
+        if (productImages.length > 1) {
+            interval = setInterval(() => {
+                currentImageIndex = (currentImageIndex + 1) % productImages.length;
+                updateProductImage();
+            }, 5000); // Cambiar imagen cada 10 segundos
+        }
+    }
+
+    function stopImageTransition() {
+        clearInterval(interval);
+        currentImageIndex = 0; // Volver a la imagen principal
+        updateProductImage();
+    }
+
+    if (productImageContainer) {
+        updateProductImage(); // Inicializa con la imagen principal visible
+        productImageContainer.addEventListener('mouseenter', startImageTransition);
+        productImageContainer.addEventListener('mouseleave', stopImageTransition);
+    }
+});
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const sliderImages = document.querySelectorAll('.slider-image');
+    let currentIndex = 0;
+
+    function updateSlider() {
+        sliderImages.forEach((image, index) => {
+            image.style.opacity = (index === currentIndex) ? '1' : '0';
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % sliderImages.length; // Cicla entre las imágenes
+        updateSlider();
+    }
+
+    if (sliderImages.length > 0) {
+        updateSlider(); // Inicializa el slider
+        setInterval(nextImage, 5000); // Cambia cada 5 segundos
+    }
+});
+
+    </script>
+    <!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const addButtons = document.querySelectorAll('.add-to-cart');
+    const cartIcon = document.querySelector('.cart-icon');
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || []; // Recuperar carrito del localStorage
+
+    // Agregar producto al carrito
+    function addToCart(productName, productPrice) {
+        const existingProduct = cart.find(item => item.name === productName);
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            cart.push({ name: productName, price: productPrice, quantity: 1 });
+        }
+        saveCart(); // Guardar carrito en localStorage
+        alert(`Producto "${productName}" agregado al carrito.`);
+    }
+
+    // Guardar carrito en localStorage
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Abrir nueva ventana para el carrito al hacer clic en el ícono
+    cartIcon.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita que navegue al enlace
+        window.open('cart.html', '_blank', 'width=800,height=600');
+    });
+
+    // Asignar evento a cada botón de agregar al carrito
+    addButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productName = button.dataset.name;
+            const productPrice = parseFloat(button.dataset.price);
+            addToCart(productName, productPrice);
+        });
+    });
+});
+    </script> -->
+    </body>
+</html>

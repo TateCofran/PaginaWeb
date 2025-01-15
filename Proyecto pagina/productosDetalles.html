@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="productosDetalles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <script src="productosDetalles.js" defer></script>
+    <script src="navbar.js" defer></script>
+    <script src="https://kit.fontawesome.com/2d76f2bdc1.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+</head>
+<body>
+    <!-- Barra principal -->
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="left-section">
+                <a href="index1.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index1.html">HOME</a></li>
+                    <li><a href="tutorial.html">TUTORIAL</a></li>
+                    <li><a href="productos.html" class="active">PRODUCTOS</a></li>
+                    <li><a href="contactos.html">CONTACTOS</a></li>
+                </ul>
+            </div>
+            <div class="right-section">
+                <input type="text" placeholder="Buscar..." class="search-bar">
+                <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="perfil.html" class="profile-icon"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </header>  
+
+    <!-- Contenido principal -->
+    <main>
+        <div class="product-details-container">
+            <!-- Galería de miniaturas -->
+            <div class="thumbnail-gallery" id="thumbnail-gallery">
+                <!-- Miniaturas generadas dinámicamente -->
+            </div>
+        
+            <!-- Imagen principal del producto -->
+            <div class="product-image">
+                <img id="product-image" src="" alt="Imagen Principal del Producto">
+            </div>
+        
+            <!-- Información del producto -->
+            <div class="product-info" id ="product-info">
+                <h1 id="product-name">Nombre del Producto</h1>
+                <p id="product-pack" class="product-pack"></p> <!-- Lugar para el pack -->
+                <p id="product-description" class="product-description"></p> <!-- Descripción principal -->
+                <p id="product-description2" class="product-description2"></p> <!-- Descripción secundaria -->
+                
+                <!-- Contenedor para colores -->
+                <div id="product-colors">
+                    <ul id="color-list"></ul>
+                </div>
+                
+                <p id="product-price" class="product-price"></p>
+                
+                <!-- Botones de acción -->
+                <div class="product-actions">
+                    <div class="quantity-control">
+                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="product-quantity" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    </div>
+                    <div class="buttons-container">
+                        <button class="buy-now">COMPRA DIRECTA</button>
+                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<!-- Cuadro emergente -->
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <!-- Animación -->
+        <div class="popup-animation">
+            <dotlottie-player   src="https://lottie.host/2874efbb-d429-414d-814b-98e84e27695c/S3LiBVQmHR.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" autoplay></dotlottie-player>
+        </div>
+
+        <!-- Información del producto -->
+        <div class="popup-product-info">
+            <img id="popup-product-image" src="" alt="Producto">
+            <h2 id="popup-product-name"></h2>
+            <p id="popup-quantity"></p>
+            <p id="popup-total"></p>
+        </div>
+
+        <!-- Botones -->
+        <div class="popup-actions">
+            <button id="continue-shopping" class="popup-button">Continuar comprando</button>
+            <button id="go-to-cart" class="popup-button">Ir al carrito</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
