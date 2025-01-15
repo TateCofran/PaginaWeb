@@ -92,7 +92,7 @@ input:focus, select:focus {
 }
 
 input[type="tel"] {
-    padding-left: 30px;
+    /*padding-left: 30px;
     /*background-image: url('images/phone-icon.png'); /* Cambiar según el ícono */
     background-repeat: no-repeat;
     background-position: 10px center;

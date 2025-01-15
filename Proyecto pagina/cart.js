@@ -3,9 +3,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotalElement = document.getElementById('cart-total');
     const flexListContainer = document.getElementById('flex-list-container');
     const flexLocationSelect = document.getElementById('flex-location');
+    const clearCartButton = document.getElementById('clear-cart');
+
+    const orderIdElement = document.getElementById('order-id'); // Elemento para el número único del pedido
+    const SEND_ORDER_KEY = 'orderSent'; // Clave para indicar si el pedido fue enviado
+
     let flexPrice = 0;
+    let flexData = []; // Variable global para almacenar los datos de flexList.json
     let productLimits = {}; // Almacenará los límites de cantidad desde productList.json
 
+    // Generar un número único de cinco dígitos
+    function generateOrderId() {
+        return Math.floor(10000 + Math.random() * 90000); // Genera un número aleatorio entre 10000 y 99999
+    }
+
+    // Obtener o establecer un número de pedido persistente
+    function getOrderId() {
+        let orderId = localStorage.getItem('orderId');
+
+        // Si no existe un número o el pedido fue enviado, generar uno nuevo
+        if (!orderId || localStorage.getItem(SEND_ORDER_KEY) === 'true') {
+            orderId = generateOrderId();
+            localStorage.setItem('orderId', orderId);
+            localStorage.setItem(SEND_ORDER_KEY, 'false'); // Reinicia el estado de envío
+        }
+
+        return orderId;
+    }
+
+    // Marcar el pedido como enviado
+    function markOrderAsSent() {
+        localStorage.setItem(SEND_ORDER_KEY, 'true');
+    }
+
+    // Mostrar el número de pedido en la sección "TU PEDIDO"
+    function displayOrderId() {
+        const orderId = getOrderId();
+        orderIdElement.textContent = `#${orderId}`;
+    }
+    
     // Cargar límites de cantidad desde productList.json
     function loadProductLimits() {
         return fetch('productosList.json')
@@ -75,13 +111,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.quantity = newQuantity;
                 updateCart(cart);
                 displayCartItems();
+                
+            });
+            // Agregar evento para eliminar producto
+            const removeButton = itemContainer.querySelector('.remove-item');
+            removeButton.addEventListener('click', () => {
+                removeItemFromCart(item.id);
             });
         });
 
         total += flexPrice; // Sumar precio de envío Flex (si aplica)
         cartTotalElement.textContent = `$${total.toFixed(2)}`;
     }
-
+    // Función para eliminar un producto del carrito
+    function removeItemFromCart(itemId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(item => item.id !== itemId); // Eliminar el producto por su id
+        updateCart(cart);
+        displayCartItems(); // Actualizar la vista
+    }
+    function clearCart() {
+        localStorage.removeItem('cart'); // Eliminar el carrito del localStorage
+        displayCartItems(); // Actualizar la vista
+        //alert('El carrito ha sido vaciado.');
+    }
+    clearCartButton.addEventListener('click', () => {
+        if (confirm('¿Estás seguro de que deseas vaciar el carrito?')) {
+            clearCart();
+        }
+    });
     // Función para cargar el archivo flexList.json y manejar la selección
     function loadFlexLocations() {
         fetch('flexList.json')
@@ -90,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
+                flexData = data; // Almacena los datos cargados globalmente
                 flexLocationSelect.innerHTML = '<option value="">Selecciona tu ubicación</option>';
                 data.forEach(location => {
                     const option = document.createElement('option');
@@ -116,21 +175,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicializar la lista de productos y precio total al cargar la página
     loadProductLimits().then(() => {
+        displayOrderId();
         displayCartItems();
         loadFlexLocations();
     });
-});
 
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
     const flexCheckbox = document.getElementById('flex-delivery');
-    const flexListContainer = document.getElementById('flex-list-container');
-    const flexLocationSelect = document.getElementById('flex-location');
     const shippingOptions = document.querySelectorAll('input[name="shipping-option"]');
-    const cartTotalElement = document.getElementById('cart-total');
-    let flexPrice = 0; // Precio del Envío Flex
 
     // Función para cargar el archivo flexList.json
     function loadFlexLocations() {
@@ -201,12 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicializar el precio total al cargar la página
     updateCartTotal();
-});
 
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
     const sendToWhatsAppButton = document.getElementById('send-to-whatsapp');
     const wantInvoiceCheckbox = document.getElementById('want-invoice');
     const invoiceFields = document.getElementById('invoice-fields');
@@ -234,9 +280,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         // Obtener datos del formulario
+        const orderId = getOrderId(); // Obtener el número de pedido actual
+
         const formData = new FormData(document.getElementById('shipping-form'));
         const data = {
             firstName: formData.get('full-name'),
+            email: formData.get('email'),
             phone: formData.get('phone'),
             dni: formData.get('dni'),
             province: formData.get('province'),
@@ -253,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Validar campos obligatorios y resaltar errores
-        const requiredFields = ['full-name', 'phone', 'dni', 'province', 'locality', 'postal-code'];
+        const requiredFields = ['full-name', 'email', 'phone', 'dni', 'province', 'locality', 'postal-code','street','street-number'];
         let allFieldsValid = true;
 
         requiredFields.forEach(fieldName => {
@@ -278,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, selecciona una opción de envío.');
             return;
         }
-
+        loadFlexLocations();
         // Validar Envío Flex
         let flexLocation = '';
         let flexPrice = 0;
@@ -290,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Buscar el precio del Envío Flex en flexList.json
-            const flexData = JSON.parse(localStorage.getItem('flexList'));
+            //const flexData = JSON.parse(localStorage.getItem('flexList'));
             const selectedFlex = flexData.find(flex => flex.flex === flexLocation);
             if (selectedFlex) {
                 flexPrice = parseFloat(selectedFlex.precio);
@@ -298,9 +347,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Generar mensaje para WhatsApp
-        let message = `👋 Hola, quiero realizar el siguiente pedido:\n\n`;
+        let message = `👋 Hola, quiero realizar el siguiente pedido: #${orderId}\n\n`;
         message += `📋 Datos del comprador:\n`;
         message += `- Nombre: ${data.firstName}\n`;
+        message += `- Email: ${data.email}\n`;
         message += `- Teléfono: ${data.phone}\n`;
         message += `- CUIT/CUIL/DNI: ${data.dni}\n`;
         message += `- Dirección: ${data.street} ${data.streetNumber}\n`;
@@ -333,9 +383,16 @@ document.addEventListener('DOMContentLoaded', () => {
         message += `\n💰 Total: $${total.toFixed(2)}\n`;
 
         // Redirigir a WhatsApp
+        //alert(`Pedido #${orderId} enviado a WhatsApp.`);
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
-    });
+        markOrderAsSent(); // Marcar el pedido como enviado
+        
+        // Retrasar la recarga de la página
+        setTimeout(() => {
+            location.reload(); // Recargar la página después de un pequeño retraso
+            clearCart();
+        }, 1000); // Retraso de 1 segundo (ajustable si es necesario)
+        clearCart()
+        });
 });
-
-
