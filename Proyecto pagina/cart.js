@@ -11,6 +11,35 @@ document.addEventListener('DOMContentLoaded', () => {
     let flexPrice = 0;
     let flexData = []; // Variable global para almacenar los datos de flexList.json
     let productLimits = {}; // Almacenará los límites de cantidad desde productList.json
+    const personalInfo = JSON.parse(localStorage.getItem('personalInfo')) || {};
+
+    // Función para rellenar automáticamente los campos del formulario
+    function populatePersonalInfo() {
+        const fields = [
+            'full-name',
+            'email',
+            'phone',
+            'dni',
+            'province',
+            'street',
+            'street-number',
+            'address',
+            'floor',
+            'apartment',
+            'locality',
+            'postal-code',
+        ];
+
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            if (input && personalInfo[field]) {
+                input.value = personalInfo[field]; // Rellenar el campo si hay información guardada
+            }
+        });
+    }
+
+    // Llamar a la función para rellenar los campos
+    populatePersonalInfo();
 
     // Generar un número único de cinco dígitos
     function generateOrderId() {

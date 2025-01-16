@@ -1,0 +1,203 @@
+/* Fondo general de la página */
+body {
+    background-image: url('images/background-image.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Necesario para que el pseudo-elemento funcione */
+}
+
+/* Contenedor principal */
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 20px; /* Espacio entre las secciones */
+    flex-wrap: wrap; /* Para que sea adaptable en pantallas más pequeñas */
+}
+
+/* Información personal */
+.personal-info {
+    flex: 3; /* Ocupa más espacio */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 280px; /* Ancho mínimo para pantallas pequeñas */
+}
+
+/* Historial de pedidos */
+.order-history {
+    flex: 2; /* Ocupa menos espacio */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 280px; /* Ancho mínimo para pantallas pequeñas */
+}
+
+/* Títulos de las secciones */
+.personal-info h2,
+.order-history h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1 1 100%; /* Tamaño completo por defecto */
+}
+
+.form-group.half-width {
+    flex: 1 1 calc(50% - 15px); /* Mitad del ancho con espacio entre elementos */
+}
+
+.form-group.quarter-width {
+    flex: 1 1 calc(25% - 15px); /* Cuarto del ancho con espacio entre elementos */
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Historial de pedidos - contenido */
+#order-history-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#order-history-list .order-item {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#order-history-list .order-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#order-history-list .order-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+/* Productos dentro del historial */
+.products-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.products-list li {
+    margin: 5px 0;
+}
+
+.product-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+}
+
+/* Botón "Volver a Comprar" */
+.reorder-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.reorder-button:hover {
+    background-color: #0056b3;
+}
+
+/* Errores de validación */
+input.field-error,
+select.field-error {
+    border-color: #e74c3c;
+}
+
+.field-error:focus {
+    outline: 1px solid #e74c3c;
+}
+
+/* Crear usuario */
+.user-creation {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.user-creation h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.user-creation form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column; /* Cambia a diseño vertical */
+    }
+
+    .personal-info, .order-history {
+        flex: 1;
+        width: 100%; /* Ocupan todo el ancho */
+    }
+}

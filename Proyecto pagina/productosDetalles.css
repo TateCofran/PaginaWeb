@@ -332,6 +332,41 @@ body::before {
     background-color: #1e7e34;
 }
 
+#productos-similares {
+    margin-top: 30px;
+}
+
+.similares-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.similar-product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    max-width: 200px;
+}
+
+.similar-product img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.similar-product a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.similar-product p {
+    margin: 10px 0;
+}
+
 
 @media (max-width: 768px) {
     .product-actions {
