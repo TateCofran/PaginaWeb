@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
              productInterval = setInterval(() => {
                  currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
                  productImage.src = imagePaths[currentImageIndex];
-             }, 10000); // Cambiar imagen cada 10 segundos
+             }, 1000); // Cambiar imagen cada 1 segundos
          });
 
          // Detener transición de imágenes al salir el mouse
