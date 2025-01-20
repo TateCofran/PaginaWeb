@@ -19,7 +19,7 @@ section {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
     margin: 20px auto; /* Espaciado entre secciones */
     padding: 20px; /* Espaciado interno */
-    border-radius: 15px; /* Bordes redondeados */
+    /*border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.5); /* Sombra difusa */
     backdrop-filter: blur(10px); /* Difumina el fondo detrás de la sección */
     -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
@@ -175,7 +175,7 @@ nav .fa{
 /*Seccion Slider*/
 /* Ajustes para la sección Slider */
 .slider {
-    margin-top: 70px; /* Agrega un margen superior para separar del navbar */
+    margin-top: 80px; /* Agrega un margen superior para separar del navbar */
     position: relative;
     width: 95%; /* Asegura que ocupe toda la anchura */
     height: 75vh; /* Ocupa toda la pantalla vertical */
@@ -431,7 +431,7 @@ nav .fa{
 
 /* ---- Tutorial ----*/
 .tutorial{
-    width: 80%;
+    width: auto;
     margin: auto;
     text-align: center;
     padding-top: 100px;
