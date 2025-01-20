@@ -82,7 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 thumbnail.onclick = () => updateMainImage(thumbnail.src);
                 thumbnailGallery.appendChild(thumbnail);
             }
-            
+            // Mostrar la cantidad mínima y máxima
+            const quantityRangeElement = document.getElementById('product-quantity-range');
+            quantityRangeElement.textContent = `Cantidad mínima: ${product.cantidadMinima || 1}, máxima: ${product.cantidadMaxima || 100}`;
+
             const quantityInput = document.getElementById('product-quantity');
             minQuantity = product.cantidadMinima || 1;
             maxQuantity = product.cantidadMaxima || 100;

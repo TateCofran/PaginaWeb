@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sendToWhatsAppButton = document.getElementById('send-to-whatsapp');
     const wantInvoiceCheckbox = document.getElementById('want-invoice');
-    const invoiceFields = document.getElementById('invoice-fields');
+    const invoiceFields = document.getElementById('factura-section');
 
     const phoneNumber = '+5491156130340'; // Número de WhatsApp
 

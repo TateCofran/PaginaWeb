@@ -55,8 +55,8 @@ body::before {
     color: #333;
 }
 .product-price{
-    font-size: 26px;
-}
+    font-size: 52px;
+    }
 /* Galería de miniaturas */
 .thumbnail-gallery {
     display: flex;
@@ -94,6 +94,19 @@ body::before {
 }
 
 /* Sección de información del producto */
+#product-pack{
+    font-size: 1em;
+}
+#product-description,
+#product-description2,
+#product-quantity-range{
+    font-size: 16px;
+}
+#product-price{
+    font-size: 24px; /* Aumentar el tamaño de la letra a 40px */
+    color:#007bff;
+}
+
 .product-info {
     flex: 1;
     display: flex;
