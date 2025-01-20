@@ -1,11 +1,12 @@
 body {
-    position: relative; /* Necesario para el pseudo-elemento */
+    position: relative;
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
     min-height: 100vh;
-    background-color: rgba(255, 255, 255, 0.9); /* Color de respaldo */
-    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
 }
 
 body::before {
@@ -19,14 +20,14 @@ body::before {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(10px); /* Aplicar efecto de desenfoque */
+    /*filter: blur(10px); /* Aplicar efecto de desenfoque */
     z-index: -1; /* Asegura que quede detrás del contenido */
 }
 
 /* Opcional: Añadir un efecto translúcido a las secciones principales */
 .main-content {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
-    border-radius: 10px; /* Bordes redondeados */
+    /*border-radius: 10px; /* Bordes redondeados */
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
@@ -39,12 +40,13 @@ body::before {
     flex-wrap: wrap;
     gap: 20px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 100px auto;
     padding: 20px;
+    padding-top: 40px;
     background-color: #fff;
-    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .product-pack {
     font-size: 16px;
     font-weight: bold;
@@ -349,36 +351,63 @@ body::before {
     margin-top: 30px;
 }
 
+#productos-similares {
+    margin-top: 40px; /* Espaciado superior para separarlo del contenido principal */
+    padding: 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 1200px; /* Ancho máximo */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+}
+
 .similares-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
+    display: flex; /* Asegura que los productos estén en fila */
+    flex-wrap: wrap; /* Permite que los productos se ajusten en varias filas */
+    gap: 20px; /* Espaciado entre los productos */
+    justify-content: space-evenly; /* Distribuye los productos de manera uniforme */
 }
 
 .similar-product {
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: center;
-    max-width: 200px;
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde sutil */
+    padding: 15px; /* Espaciado interno */
+    text-align: center; /* Centrar el contenido */
+    max-width: 200px; /* Ancho máximo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para hover */
+}
+
+.similar-product:hover {
+    transform: scale(1.05); /* Ampliar ligeramente al pasar el mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 .similar-product img {
-    width: 100%;
-    height: auto;
-    max-height: 150px;
-    object-fit: cover;
+    width: 100%; /* Ajustar al ancho del contenedor */
+    height: auto; /* Mantener proporción */
+    max-height: 150px; /* Altura máxima */
+    object-fit: cover; /* Asegurar que la imagen se ajuste sin distorsión */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado debajo de la imagen */
 }
 
 .similar-product a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    text-decoration: none; /* Quitar subrayado */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Negrita */
+    display: block; /* Asegurar que ocupe toda la línea */
+    margin-bottom: 10px; /* Espaciado debajo del texto */
 }
 
 .similar-product p {
-    margin: 10px 0;
+    font-size: 14px; /* Ajustar tamaño del texto */
+    color: #555; /* Color del texto */
+    margin: 0; /* Quitar márgenes */
 }
+
 
 
 @media (max-width: 768px) {

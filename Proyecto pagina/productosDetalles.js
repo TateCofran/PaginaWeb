@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error: Producto no encontrado en el JSON.');
                 return;
             }
+            
+            generateSimilarProducts(data, productId);
 
             // Ruta base de las imágenes del producto
             const productImagePath = product.images;
@@ -229,4 +231,37 @@ function decreaseQuantity() {
     if (currentValue > minQuantity) {
         quantityInput.value = currentValue - 1;
     }
+}
+/**
+ * Función para generar productos similares dinámicamente.
+ */
+function generateSimilarProducts(data, currentProductId) {
+    const similarContainer = document.getElementById('similares-container');
+
+    if (!similarContainer) {
+        console.error('Error: Contenedor de productos similares no encontrado.');
+        return;
+    }
+
+    // Filtrar productos que no sean el actual
+    const similarProducts = data.filter(product => product.id !== currentProductId);
+
+    // Seleccionar 4 productos al azar
+    const selectedProducts = similarProducts.sort(() => 0.5 - Math.random()).slice(0, 4);
+
+    // Generar elementos para los productos similares
+    selectedProducts.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('similar-product');
+
+        productElement.innerHTML = `
+            <a href="productosDetalles.html?id=${product.id}">
+                <img src="${product.images}${product.id}1.jpg" alt="${product.titulo}">
+                <h4>${product.titulo}</h4>
+                <p>$${product.precio}</p>
+            </a>
+        `;
+
+        similarContainer.appendChild(productElement);
+    });
 }
