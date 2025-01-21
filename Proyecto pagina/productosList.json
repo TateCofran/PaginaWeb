@@ -54,12 +54,10 @@
         "images": "images/products/mini-botellas/",
         "precio": 759,
         "descripcion": "Medidas: 14cm de alto, 190cc.",
+        "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
-            "tapas": {
-                "fuertes": ["Azul", "Celeste", "Verde", "Amarillo", "Rojo"],
-                "pasteles": ["Rosa", "Lila", "Celeste", "Salmón", "Amarillo", "Verde"]
-            },
-            "sorbetes": ["Blanco", "Negro"]
+                "Tapas fuertes": ["Azul", "Celeste", "Verde", "Amarillo", "Rojo"],
+                "Tapas pasteles": ["Rosa", "Lila", "Celeste", "Salmón", "Amarillo", "Verde"]
         },
         "cantidadMinima": 10,
         "cantidadMaxima": 150 
@@ -70,8 +68,9 @@
         "images": "images/products/mini-botellas-corona/",
         "precio": 819,
         "descripcion": "Medidas: 14cm de alto, 190cc.",
+        "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
-            "pasteles": ["Naranja", "Amarillo", "Celeste", "Rosa", "Lila"]
+            "Tapas pasteles": ["Naranja", "Amarillo", "Celeste", "Rosa", "Lila"]
         },
         "cantidadMinima": 10,
         "cantidadMaxima": 150
@@ -93,8 +92,102 @@
         "precio": 3390,
         "descripcion": "Medidas: 10cm de alto y 8cm de ancho aprox.",
         "descripcion2": "Material: Tela - Algodón Color Crudo. Soga ajustable.",
+        "colores": {
+            "soga": ["Violeta", "Fucsia", "Blanco", "Amarillo", "Negro", "Azul", "Rojo", "Celeste", "Marrón", "Verde", "Crudo", "Rosa pastel", "Naranja", "Surtidas"]
+        },
         "pack": "Pack de 10 bolsas",
         "cantidadMinima": 1,
         "cantidadMaxima": 10  
+    },
+    {        
+        "id": "bolsas-gracias-por-venir-",
+        "titulo": "Bolsas Gracias por venir",
+        "images": "images/products/bolsas-gracias-por-venir-/",
+        "precio": 8990,
+        "descripcion": "Medidas: 20cm de alto y 20cm de ancho aprox.",
+        "descripcion2": "Material: Tela Color Crudo con manija de colores.",
+        "colores": {
+            "manijas": ["Celeste", "Fucsia", "Lila", "Amarillo", "Rosa", "Verde Agua", "Rojo", "Turquesa", "Violeta", "Surtida", "Surtida pasteles", "Negro", "Naranja", "Azul", "Blanco"]
+        },
+        "pack": "Pack de 10 bolsas de manijas de colores.",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10  
+    },
+    {
+        "id": "ositos-sorbetes",
+        "titulo": "Ositos con Sorbetes",
+        "images": "images/products/ositos-sorbetes/",
+        "precio": 769,
+        "descripcion": "Medidas 14 cm de alto, Capacidad 240 cc.",
+        "descripcion2": "Sorbetes negros/transparentes según stock",
+        "colores": {
+                "Tapas pasteles": ["Rosa", "Lila", "Celeste", "Salmón", "Amarillo", "Verde"]      
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 150 
+    },
+    {
+        "id": "tubos-de-ensayo-13cm-",
+        "titulo": "Tubos de ensayo 13cm",
+        "images": "images/products/tubos-de-ensayo-13cm-/",
+        "precio": 689,
+        "descripcion": "Medidas: Alto 13cm.",
+        "colores": {
+            "Tapas fuertes": ["Verde", "Rojo"],
+            "Tapas pasteles": ["Rosa", "Lila", "Celeste", "Verde"]      
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 100 
+    },
+    {
+        "id": "canastas",
+        "titulo": "Mini Canastas",
+        "images": "images/products/canastas/",
+        "precio": 619,
+        "descripcion": "Medida base 8 , boca 10cm , alto 8,5 , sin contar las manijas.",
+        "colores": {
+            "fuertes": ["Celeste", "Fucsia", "Rojo", "Verde manzana", "Aqua", "Verde oscuro", "Blanco", "Amarillo", "Naranja", "Azul", "Plateado", "Violeta", "Negro", "Transparente"],
+            "pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 100 
+    },
+    {
+        "id": "vasos-acrilicos",
+        "titulo": "Vasos acrílicos con sorbete",
+        "images": "images/products/vasos-acrilicos/",
+        "precio": 999,
+        "descripcion": "Medidas aproximadas: Diametro 8,5cm. Altura con la tapa 16 cm. Capacidad 475cc",
+        "descripcion2": "Sorbetes negros/transparentes según stock",
+        "colores": {
+            "tapas fuertes": ["Celeste", "Fucsia", "Rojo", "Verde", "Salmón", "Blanco"],
+            "tapas pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 100 
+    },
+    {
+        "id": "valijitas-golosineras",
+        "titulo": "Valijas Golosineras",
+        "images": "images/products/valijitas-golosineras/",
+        "precio": 1000,
+        "descripcion": "Medidas: Alto 10cm, Ancho 17cm.",
+        "colores": {
+            "pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 50 
+    },
+    {
+        "id": "compoteras",
+        "titulo": "Compoteras",
+        "images": "images/products/compoteras/",
+        "precio": 519,
+        "descripcion": "Medidas tapa 9 cm diámetro, Altura 4,5 cm.",
+        "colores": {
+            "fuertes": ["Amarillo", "Azul", "Rojo", "Verde", "Rosa"]      
+        },
+        "cantidadMinima": 10,
+        "cantidadMaxima": 50 
     }
 ]
