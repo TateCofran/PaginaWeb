@@ -189,5 +189,29 @@
         },
         "cantidadMinima": 10,
         "cantidadMaxima": 50 
+    },
+    {
+        "id": "regaderas",
+        "titulo": "Regaderas",
+        "images": "images/products/regaderas/",
+        "precio": 959,
+        "descripcion": "REGADERAS SURTIDAS DE COLORES PASTELES Y MODELOS SURTIDOS.",
+        "descripcion2": "Modelo 1: Circunferencia 7,5cm y Alto 11cm aprox. Modelo 2: Circunferencia 10cm y Alto 11cm aprox.",
+        "cantidadMinima": 10,
+        "cantidadMaxima": 50 
+    },
+    {
+        "id": "bolsas-arpilleras-20x13-",
+        "titulo": "Bolsas arpilleras 20x13",
+        "images": "images/products/bolsas-arpilleras-20x13-/",
+        "precio": 9690,
+        "descripcion": "Medidas: 20cm de alto y 13cm de ancho aprox.",
+        "descripcion2": "Material: Arpillera.",
+        "colores": {
+            "soga": ["Crudo", "Negro", "Blanco"]
+        },
+        "pack": "Pack de 10 bolsas",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10  
     }
 ]
