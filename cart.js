@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         // Obtener datos del formulario
-        const orderId = getOrderId(); // Obtener el número de pedido actual
+        //const orderId = getOrderId(); // Obtener el número de pedido actual
 
         const formData = new FormData(document.getElementById('shipping-form'));
         const data = {
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Generar mensaje para WhatsApp
-        let message = `👋 Hola, quiero realizar el siguiente pedido: #${orderId}\n\n`;
+        let message = `👋 Hola, quiero realizar el siguiente pedido:\n\n`;
         message += `📋 Datos del comprador:\n`;
         message += `- Nombre: ${data.firstName}\n`;
         message += `- Email: ${data.email}\n`;
