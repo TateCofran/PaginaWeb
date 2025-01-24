@@ -15,7 +15,7 @@
     {
         "id": "botellas750cc",
         "titulo": "Botellas 750cc",
-        "images": "images/products/Botellas750cc/",
+        "images": "images/products/botellas750cc/",
         "precio": 899,
         "descripcion": "Medidas: 24x7, 750cc.",
         "colores": {
@@ -28,7 +28,7 @@
     {
         "id": "botellas500cc",
         "titulo": "Botellas 500cc",
-        "images": "images/products/Botellas500cc/",
+        "images": "images/products/botellas500cc/",
         "precio": 859,
         "descripcion": "Medidas: 19x6cm, 500cc.",
         "colores": {
@@ -41,7 +41,7 @@
     {
         "id": "botellas750cc-ancha",
         "titulo": "Botellas 750cc - Boca ancha",
-        "images": "images/products/Botellas750cc-ancha/",
+        "images": "images/products/botellas750cc-ancha/",
         "precio": 889,
         "descripcion": "Medidas: 24x7, 750cc.",
         "colores": ["Verde Pastel", "Aqua", "Naranja", "Turquesa", "Rosa Pastel", "Amarillo", "Verde Manzana", "Verde", "Rojo", "Negro", "Lila", "Azul"],
