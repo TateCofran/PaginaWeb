@@ -253,3 +253,115 @@ input[type="tel"] {
     border: 2px solid red; /* Resaltar el borde en rojo */
     background-color: #ffe5e5; /* Fondo ligeramente rojo */
 }
+@media (max-width: 400px) {
+    body {
+        margin-top: 20px; /* Ajuste del margen superior para pantallas pequeñas */
+        padding: 30px 0px 0px  20px; /* Reducir padding general */
+        min-height: 100vh;
+        display: block; /* Cambia la disposición a vertical */
+    }
+
+    .cart-page-container {
+        flex-direction: column; /* Cambiar a disposición vertical */
+        gap: 15px; /* Reducir el espacio entre secciones */
+    }
+
+    .contact-section, .order-section {
+        flex: 1 1 100%; /* Cada sección ocupa el ancho completo */
+        margin-bottom: 10px; /* Espaciado entre secciones */
+        padding: 15px; /* Reducir padding interno */
+    }
+
+    h3 {
+        font-size: 16px; /* Reducir tamaño de los títulos */
+    }
+
+    /* Formulario en sección de contacto */
+    .contact-section form {
+        gap: 10px; /* Reducir el espacio entre los campos */
+    }
+
+    .form-group {
+        flex: 1 1 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .form-group.half-width {
+        flex: 1 1 100%; /* Cambiar a ancho completo */
+    }
+
+    input, select, textarea {
+        font-size: 12px; /* Reducir el tamaño de fuente */
+        padding: 6px; /* Reducir el padding interno */
+    }
+
+    textarea {
+        font-size: 12px; /* Ajustar el tamaño de texto */
+        padding: 8px;
+    }
+
+    /* Sección de facturación */
+    .factura-section {
+        padding: 15px; /* Reducir padding */
+        font-size: 14px; /* Reducir el tamaño de fuente */
+    }
+
+    /* Sección de pedido */
+    .cart-item {
+        flex-direction: column; /* Cambiar disposición a vertical */
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .item-image img {
+        width: 80px; /* Reducir tamaño de imágenes */
+        height: 80px;
+        margin-bottom: 10px; /* Añadir espacio debajo de las imágenes */
+    }
+
+    .item-details {
+        margin-left: 0; /* Eliminar márgenes para alineación vertical */
+    }
+
+    .item-price p {
+        font-size: 14px; /* Reducir tamaño de texto */
+    }
+
+    .subtotal {
+        text-align: left; /* Alinear el subtotal a la izquierda */
+        font-size: 14px; /* Reducir tamaño de texto */
+    }
+
+    .actions {
+        flex-direction: column; /* Cambiar botones a disposición vertical */
+        gap: 5px; /* Reducir espacio entre botones */
+    }
+
+    .action-link {
+        font-size: 12px; /* Reducir tamaño de texto */
+        padding: 8px 10px; /* Reducir padding interno */
+    }
+
+    #clear-cart, #send-to-whatsapp {
+        font-size: 12px; /* Ajustar tamaño de fuente */
+    }
+
+    /* Sección de envío y opcional */
+    .shipping-section, .optional-section {
+        margin-top: 10px; /* Reducir margen superior */
+        padding: 10px; /* Reducir padding interno */
+    }
+
+    .shipping-section h3, .optional-section h3 {
+        font-size: 14px; /* Ajustar tamaño de títulos */
+    }
+
+    .optional-section textarea {
+        font-size: 12px; /* Reducir tamaño de texto */
+        padding: 0; /* Reducir padding interno */
+    }
+
+    /* Resaltar errores */
+    .field-error {
+        font-size: 12px; /* Ajustar tamaño del texto de error */
+    }
+}

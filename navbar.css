@@ -198,3 +198,90 @@
 .view-more-button:hover {
     background-color: #0056b3;
 }
+@media (max-width: 400px) {
+    /* Ajustes generales del navbar */
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+    }
+
+    /* Ocultar menú original en dispositivos pequeños */
+    .nav-menu {
+        display: none;
+    }
+
+    /* Ícono del menú desplegable */
+    .menu-icon {
+        display: block; /* Mostrar el ícono del menú */
+        font-size: 24px; /* Tamaño del ícono */
+        color: #333;
+        cursor: pointer;
+    }
+
+    /* Menú desplegable */
+    .dropdown-menu {
+        display: none; /* Oculto por defecto */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho */
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .dropdown-menu.active {
+        display: flex; /* Mostrar menú desplegable */
+    }
+
+    .dropdown-menu li {
+        list-style: none;
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .dropdown-menu li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .dropdown-menu li a:hover {
+        color: #007bff;
+        background-color: #f0f0f0;
+    }
+
+    /* Barra de búsqueda */
+    .search-bar {
+        width: 60%; /* Reduce el tamaño de la barra de búsqueda */
+    }
+
+    /* Ícono del carrito */
+    .cart-icon {
+        font-size: 20px;
+    }
+}
+/* Estilo para dispositivos mayores a 400px */
+@media (min-width: 401px) {
+    .nav-menu {
+        display: flex; /* Restaurar el menú original horizontal */
+        gap: 15px;
+    }
+
+    .menu-icon {
+        display: none; /* Ocultar el ícono del menú desplegable */
+    }
+
+    .dropdown-menu {
+        display: none; /* Asegurarse de que el menú desplegable no esté visible */
+    }
+    .menu-icon fa fa-bars{
+        display: none;
+    }
+}

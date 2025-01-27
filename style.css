@@ -35,28 +35,6 @@ section h1, section h2 {
 section .container {
     padding: 20px;
 }
-
-
-/* Ajustes para dispositivos pequeños */
-@media(max-width: 700px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .left-section, .right-section {
-        width: 100%;
-    }
-
-    .right-section {
-        margin-top: 10px;
-    }
-
-    .left-section .nav-menu {
-        flex-direction: column;
-    }
-}
-
 .header{
     min-height: 100vh;
     width: 100%;
@@ -142,36 +120,6 @@ nav .fa{
     display: none;
 }
 
-@media(max-width:700px){
-    .text-box h1{
-        font-size: 20px;
-    }
-    .nav-links ul li{
-        display: block;
-    }
-    .nav-links{
-        position: absolute;
-        background: #f44336;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200;
-        text-align: left;
-        z-index: 2;
-        transition: 1s;
-    }
-    nav .fa{
-        display: block;
-        color: #fff;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-    .nav-links ul{
-        padding: 30px;
-
-    }
-}
 /*Seccion Slider*/
 /* Ajustes para la sección Slider */
 .slider {
@@ -469,12 +417,6 @@ nav .fa{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
 
-@media(max-width: 700px){
-    .row{
-        flex-direction: column;
-    }
-}
-
 /*---------------- Productos -------------------*/
 .sub-header{
     height: 50vh;
@@ -559,4 +501,111 @@ nav .fa{
     border: 1px solid #f44336;
     background: #f44336;
     transition: 1s;
+}
+@media (max-width: 400px) {
+    body {
+        padding: 10px; /* Reduce el padding general */
+    }
+
+    .header {
+        min-height: 80vh; /* Ajusta la altura del encabezado */
+        background-size: cover; /* Mantiene la proporción de la imagen */
+    }
+
+    .nav-links ul li {
+        font-size: 12px; /* Ajusta el tamaño del texto en los enlaces */
+        padding: 6px; /* Reduce el espaciado */
+    }
+
+    .text-box {
+        width: 95%; /* Asegura que el texto no se desborde */
+        top: 40%; /* Ajusta la posición vertical */
+    }
+
+    .text-box h1 {
+        font-size: 24px; /* Reduce el tamaño del título */
+    }
+
+    .text-box p {
+        font-size: 16px; /* Reduce el tamaño del subtítulo */
+    }
+
+    .btn {
+        padding: 8px 12px; /* Reduce el tamaño del botón */
+        font-size: 12px; /* Ajusta el texto del botón */
+    }
+
+    .slider {
+        margin-top: 20px; /* Reduce el espacio superior */
+        height: 50vh; /* Ajusta la altura del slider */
+    }
+
+    .slider-image {
+        object-fit: contain; /* Asegura que las imágenes se adapten sin cortarse */
+    }
+
+    .productos-destacados {
+        margin: 20px 0; /* Reduce los márgenes */
+    }
+
+    .products-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el diseño de la cuadrícula */
+        gap: 10px; /* Reduce el espacio entre productos */
+    }
+
+    .product-item {
+        width: 100%; /* Asegura que el producto ocupe todo el ancho disponible */
+    }
+
+    .image-container {
+        width: 100%; /* Ajusta el ancho */
+        height: 200px; /* Reduce la altura */
+    }
+
+    .product-item img {
+        object-fit: cover; /* Asegura que las imágenes se adapten bien */
+    }
+
+    .info-container {
+        padding: 10px; /* Reduce el espaciado interno */
+    }
+
+    .product-item h3 {
+        font-size: 16px; /* Reduce el tamaño del título del producto */
+    }
+
+    .product-item p {
+        font-size: 14px; /* Reduce el tamaño del precio */
+    }
+
+    .nosotros-container {
+        flex-direction: column; /* Cambia el diseño a columnas */
+        gap: 15px; /* Ajusta el espacio entre elementos */
+    }
+
+    .tutorial-col {
+        flex-basis: 100%; /* Asegura que cada columna ocupe todo el ancho */
+        margin-bottom: 20px; /* Reduce el margen inferior */
+    }
+
+    .productos {
+        width: 100%; /* Ajusta el ancho de la sección */
+    }
+
+    .productos-box {
+        padding: 15px; /* Reduce el espaciado interno */
+    }
+
+    .productos-box img {
+        height: 150px; /* Reduce la altura de las imágenes */
+    }
+
+    .price {
+        font-size: 12px; /* Ajusta el tamaño del texto del precio */
+    }
+
+    .comprar-btn {
+        padding: 8px 10px; /* Reduce el tamaño del botón */
+        font-size: 12px; /* Ajusta el tamaño del texto */
+    }
 }

@@ -135,4 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicializar la carga de productos
     loadProducts();
+    
+    const menuIcon = document.querySelector(".menu-icon");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    menuIcon.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("active"); // Activa/desactiva el menú
+    });
 });
