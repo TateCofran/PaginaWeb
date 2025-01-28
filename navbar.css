@@ -198,7 +198,7 @@
 .view-more-button:hover {
     background-color: #0056b3;
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     /* Ajustes generales del navbar */
     .nav-container {
         display: flex;
@@ -268,7 +268,7 @@
     }
 }
 /* Estilo para dispositivos mayores a 400px */
-@media (min-width: 401px) {
+@media (min-width: 1001px) {
     .nav-menu {
         display: flex; /* Restaurar el menú original horizontal */
         gap: 15px;

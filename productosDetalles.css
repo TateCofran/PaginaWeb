@@ -410,7 +410,7 @@ body::before {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .product-actions {
         flex-wrap: wrap; /* Permite que los elementos se envuelvan */
         justify-content: center; /* Centra los elementos */
