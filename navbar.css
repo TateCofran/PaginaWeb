@@ -198,7 +198,7 @@
 .view-more-button:hover {
     background-color: #0056b3;
 }
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     /* Ajustes generales del navbar */
     .nav-container {
         display: flex;
