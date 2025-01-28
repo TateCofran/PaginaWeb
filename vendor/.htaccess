@@ -7,3 +7,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # Redirigir todas las solicitudes a index.php
 RewriteRule ^ index.php [L]
+
+RewriteEngine On
+RewriteRule ^inicio$ /index1.html [L]
+RewriteRule ^carrito$ /cart.html [L]
+
