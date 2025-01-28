@@ -6,7 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # Redirigir todas las solicitudes a index.php
-RewriteRule ^ index.php [L]
+RewriteRule ^inicio$ /index.php [L]
 
 RewriteEngine On
 RewriteRule ^inicio$ /index1.html [L]
