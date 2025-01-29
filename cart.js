@@ -65,11 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(SEND_ORDER_KEY, 'true');
     }
 
-    // Mostrar el número de pedido en la sección "TU PEDIDO"
-    function displayOrderId() {
-        const orderId = getOrderId();
-        orderIdElement.textContent = `#${orderId}`;
-    }
+
     
     // Cargar límites de cantidad desde productList.json
     function loadProductLimits() {
@@ -91,17 +87,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar los productos en el carrito
     function displayCartItems() {
+        console.log("Ejecutando displayCartItems...");
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         cartItemsList.innerHTML = '';
+    
+        if (cart.length === 0) {
+            cartItemsList.innerHTML = '<p>El carrito está vacío.</p>';
+            cartTotalElement.innerHTML = '<p><strong>TOTAL:</strong> $0.00</p>';
+            return;
+        }
+    
         let total = 0;
-
+        let detalleHTML = '<p></p><ul>';
+    
         cart.forEach(item => {
             const limits = productLimits[item.id] || { min: 1, max: Infinity };
-
+            const subtotal = item.price * item.quantity;
+            total += subtotal;
+    
             // Crear contenedor para cada producto
             const itemContainer = document.createElement('div');
             itemContainer.classList.add('cart-item');
-
+    
             itemContainer.innerHTML = `
                 <div class="item-image">
                     <img src="images/products/${item.image}" alt="${item.name}">
@@ -112,21 +119,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="number" id="quantity-${item.id}" class="quantity-input" value="${item.quantity}" min="${limits.min}" max="${limits.max}">
                 </div>
                 <div class="item-price">
-                    <p>$${(item.price * item.quantity).toFixed(2)}</p>
+                    <p>$${subtotal.toFixed(2)}</p>
                 </div>
                 <div class="item-actions">
                     <button class="remove-item" data-id="${item.id}">🗑</button>
                 </div>
             `;
-
+    
             cartItemsList.appendChild(itemContainer);
-            total += item.price * item.quantity;
-
+    
+            // Agregar detalle del producto al resumen
+            //detalleHTML += `<p>${item.quantity}x ${item.name} - $${subtotal.toFixed(2)}</p>`;
+    
             // Agregar evento para actualizar cantidad
             const quantityInput = itemContainer.querySelector(`#quantity-${item.id}`);
             quantityInput.addEventListener('change', (e) => {
                 let newQuantity = parseInt(e.target.value, 10);
-
+    
                 // Verificar los límites
                 if (newQuantity < limits.min) {
                     alert(`La cantidad mínima para este producto es ${limits.min}.`);
@@ -135,23 +144,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(`La cantidad máxima para este producto es ${limits.max}.`);
                     newQuantity = limits.max;
                 }
-
+    
                 e.target.value = newQuantity;
                 item.quantity = newQuantity;
                 updateCart(cart);
                 displayCartItems();
-                
             });
+    
             // Agregar evento para eliminar producto
             const removeButton = itemContainer.querySelector('.remove-item');
             removeButton.addEventListener('click', () => {
                 removeItemFromCart(item.id);
             });
         });
-
-        total += flexPrice; // Sumar precio de envío Flex (si aplica)
-        cartTotalElement.textContent = `$${total.toFixed(2)}`;
+    
+        // Agregar costo de envío si existe
+        if (flexPrice > 0) {
+            detalleHTML += `<p><strong>Envío:</strong> $${flexPrice.toFixed(2)}</p>`;
+            total += flexPrice;
+        }
+    
+        detalleHTML += `</ul><p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+    
+        // Mostrar el total desglosado en la sección "TU PEDIDO"
+        cartTotalElement.innerHTML = detalleHTML;
     }
+    
     // Función para eliminar un producto del carrito
     function removeItemFromCart(itemId) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -159,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCart(cart);
         displayCartItems(); // Actualizar la vista
     }
+
     function clearCart() {
         localStorage.removeItem('cart'); // Eliminar el carrito del localStorage
         displayCartItems(); // Actualizar la vista
@@ -169,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearCart();
         }
     });
+
     // Función para cargar el archivo flexList.json y manejar la selección
     function loadFlexLocations() {
         fetch('flexList.json')
@@ -204,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicializar la lista de productos y precio total al cargar la página
     loadProductLimits().then(() => {
-        displayOrderId();
         displayCartItems();
         loadFlexLocations();
     });
@@ -277,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
         total += flexPrice; // Sumar el precio del envío Flex (si aplica)
         cartTotalElement.textContent = `$${total.toFixed(2)}`;
+        displayCartItems();
     }
 
     // Inicializar el precio total al cargar la página
