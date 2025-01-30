@@ -281,7 +281,4 @@
     .dropdown-menu {
         display: none; /* Asegurarse de que el menú desplegable no esté visible */
     }
-    .menu-icon fa fa-bars{
-        display: none;
-    }
 }
