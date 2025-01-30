@@ -253,7 +253,7 @@ input[type="tel"] {
     border: 2px solid red; /* Resaltar el borde en rojo */
     background-color: #ffe5e5; /* Fondo ligeramente rojo */
 }
-@media (max-width: 1000px) {
+@media (max-width: 412px) {
     body {
         margin-top: 20px; /* Ajuste del margen superior para pantallas pequeñas */
         padding: 30px 0px 0px  20px; /* Reducir padding general */

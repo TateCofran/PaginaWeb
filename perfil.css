@@ -191,7 +191,7 @@ select.field-error {
     gap: 15px;
 }
 /* Ajustes para pantallas pequeñas */
-@media (max-width: 1000px) {
+@media (max-width: 412px) {
     .profile-container {
         flex-direction: column; /* Cambia a diseño vertical */
     }
