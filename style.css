@@ -502,6 +502,7 @@ nav .fa{
     background: #f44336;
     transition: 1s;
 }
+
 @media (max-width: 412px) {
     body {
         padding: 10px; /* Reduce el padding general */

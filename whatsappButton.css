@@ -1,0 +1,37 @@
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0; /* Oculto por defecto */
+    pointer-events: none; /* Evita que se pueda hacer clic cuando está oculto */
+}
+
+.whatsapp-button.visible {
+    opacity: 1; /* Se muestra cuando se hace scroll hacia abajo */
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+
+.whatsapp-button i {
+    font-size: 30px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}

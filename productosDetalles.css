@@ -379,7 +379,9 @@ body::before {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para hover */
 }
-
+.productos-similares h3{
+    text-align: center;
+}
 .similar-product:hover {
     transform: scale(1.05); /* Ampliar ligeramente al pasar el mouse */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
