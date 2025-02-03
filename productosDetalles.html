@@ -102,23 +102,27 @@
 <!-- Cuadro emergente -->
 <div id="popup" class="popup hidden">
     <div class="popup-content">
-        <!-- Animación -->
+        <!-- Icono de confirmación -->
         <div class="popup-animation">
-            <dotlottie-player   src="https://lottie.host/2874efbb-d429-414d-814b-98e84e27695c/S3LiBVQmHR.lottie" background="transparent" speed="1" style="width: 200px; height: 200px" autoplay></dotlottie-player>
+            <dotlottie-player src="https://lottie.host/2874efbb-d429-414d-814b-98e84e27695c/S3LiBVQmHR.lottie" 
+                background="transparent" speed="1" style="width: 100px; height: 100px" autoplay>
+            </dotlottie-player>
         </div>
 
         <!-- Información del producto -->
         <div class="popup-product-info">
             <img id="popup-product-image" src="" alt="Producto">
-            <h2 id="popup-product-name"></h2>
-            <p id="popup-quantity"></p>
-            <p id="popup-total"></p>
+            <div class="popup-text">
+                <h2 id="popup-product-name"></h2>
+                <p id="popup-quantity"></p>
+                <p id="popup-total"></p>
+            </div>
         </div>
 
         <!-- Botones -->
         <div class="popup-actions">
-            <button id="continue-shopping" class="popup-button">Continuar comprando</button>
-            <button id="go-to-cart" class="popup-button">Ir al carrito</button>
+            <button id="continue-shopping" class="popup-button continue">Continuar comprando</button>
+            <button id="go-to-cart" class="popup-button cart">Ir al carrito</button>
         </div>
     </div>
 </div>
