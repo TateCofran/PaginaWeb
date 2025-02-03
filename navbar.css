@@ -88,6 +88,23 @@
 .cart-icon:hover, .profile-icon:hover {
     color: #007bff;
 }
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 #search-results-container {
     position: fixed;
     top: 60px; /* Ajusta según la posición de tu barra de búsqueda */

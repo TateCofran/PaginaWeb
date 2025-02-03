@@ -33,8 +33,10 @@
             </div>
             <div class="right-section">
                 <input type="text" placeholder="Buscar..." class="search-bar">
-                <a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
-                <!--<a href="perfil.html" class="profile-icon"><i class="fa-solid fa-user"></i></a>-->
+                <a href="cart.html" class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>    
             </div>
         </div>
             <!-- Menú desplegable -->
@@ -82,7 +84,9 @@
                     </div>
                     <div class="buttons-container">
                         <button class="buy-now">COMPRA DIRECTA</button>
-                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO</button>
+                        <button id="add-to-cart-btn" class="add-to-cart">
+                            <i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
+                        </button>                                            
                     </div>
                 </div>
             </div>

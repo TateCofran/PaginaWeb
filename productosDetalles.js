@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    updateCartCount(); // Actualizar el contador después de agregar
+
     // Cargar datos del JSON
     fetch('productosList.json')
         .then(response => {
@@ -158,6 +160,9 @@ function configureButtons(product, quantityInput) {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
+
+        updateCartCount(); // Actualizar el contador después de agregar
+
         showPopup(product, quantity); // Mostrar el cuadro emergente
     });
 

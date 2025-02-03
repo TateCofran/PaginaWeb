@@ -143,3 +143,22 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownMenu.classList.toggle("active"); // Activa/desactiva el menú
     });
 });
+// Obtener el contador del carrito
+const cartCountElement = document.getElementById('cart-count');
+
+// Función para obtener la cantidad de productos del carrito (suponiendo que usás localStorage)
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCountElement.textContent = cart.length;
+}
+
+// Llamar a la función al cargar la página para mostrar la cantidad actual
+document.addEventListener('DOMContentLoaded', updateCartCount);
+
+// Cada vez que agregues un producto, actualizá el contador
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();  // Actualizá el número del carrito
+}
