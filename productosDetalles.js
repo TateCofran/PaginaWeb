@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error: Falta información del producto en los parámetros de la URL.');
         return;
     }
-
-    updateCartCount(); // Actualizar el contador después de agregar
-
     // Cargar datos del JSON
     fetch('productosList.json')
         .then(response => {
