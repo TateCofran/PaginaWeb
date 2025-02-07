@@ -89,13 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
          const infoContainer = document.createElement('div');
          infoContainer.classList.add('info-container');
          infoContainer.innerHTML = `
-             <h3>${product.titulo}</h3>
-             <p>$${product.precio}</p>
-             <div class="product-actions">
-                 <button class="more-details" onclick="redirectToDetails('${product.titulo}', ${product.precio}, '${product.id}')">
-                     Más detalles
-                 </button>
-             </div>
+                 <h3>${product.titulo}</h3>
+                    <p>${product.pack}<p>
+                    <h3>$${product.precio}</h3>
+                    <div class="product-actions">
+                        <button class="more-details" onclick="redirectToDetails('${product.titulo}', ${product.precio}, '${product.id}')">
+                            Más detalles
+                        </button>
+                    </div>
          `;
 
          // Agregar contenedores al producto

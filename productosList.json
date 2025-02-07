@@ -9,6 +9,7 @@
             "pasteles": ["Celeste", "Lila", "Rosa", "Verde"],
             "fuertes": ["Amarillo", "Azul", "Blanco", "Celeste", "Violeta", "Rojo", "Rosa", "Turquesa", "Verde", "Naranja", "Negro"]
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 150
     },
@@ -22,6 +23,7 @@
             "pasteles": ["Celeste", "Lila", "Rosa", "Verde"],
             "fuertes": ["Blanco", "Negro", "Aqua", "Rojo", "Verde", "Celeste", "Azul", "Turquesa", "Naranja", "Rosa", "Amarillo", "Lila"]
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 150
     },
@@ -35,6 +37,7 @@
             "pasteles": ["Verde Agua", "Lila", "Rosa", "Celeste"],
             "fuertes": ["Blanco", "Naranja", "Negro", "Verde", "Rojo", "Celeste", "Azul", "Turquesa", "Rosa", "Amarillo"]
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 150
     },
@@ -45,6 +48,7 @@
         "precio": 889,
         "descripcion": "Medidas: 24x7, 750cc.",
         "colores": ["Verde Pastel", "Aqua", "Naranja", "Turquesa", "Rosa Pastel", "Amarillo", "Verde Manzana", "Verde", "Rojo", "Negro", "Lila", "Azul"],
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 150
     },
@@ -59,6 +63,7 @@
                 "Tapas fuertes": ["Azul", "Celeste", "Verde", "Amarillo", "Rojo"],
                 "Tapas pasteles": ["Rosa", "Lila", "Celeste", "Salmón", "Amarillo", "Verde"]
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 150 
     },
@@ -72,6 +77,7 @@
         "colores": {
             "Tapas pasteles": ["Naranja", "Amarillo", "Celeste", "Rosa", "Lila"]
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 150
     },
@@ -109,7 +115,7 @@
         "colores": {
             "manijas": ["Celeste", "Fucsia", "Lila", "Amarillo", "Rosa", "Verde Agua", "Rojo", "Turquesa", "Violeta", "Surtida", "Surtida pasteles", "Negro", "Naranja", "Azul", "Blanco"]
         },
-        "pack": "Pack de 10 bolsas de manijas de colores.",
+        "pack": "Pack de 10 bolsas",
         "cantidadMinima": 1,
         "cantidadMaxima": 10  
     },
@@ -123,6 +129,7 @@
         "colores": {
                 "Tapas pasteles": ["Rosa", "Lila", "Celeste", "Salmón", "Amarillo", "Verde"]      
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 150 
     },
@@ -136,6 +143,7 @@
             "Tapas fuertes": ["Verde", "Rojo"],
             "Tapas pasteles": ["Rosa", "Lila", "Celeste", "Verde"]      
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 100 
     },
@@ -149,6 +157,7 @@
             "fuertes": ["Celeste", "Fucsia", "Rojo", "Verde manzana", "Aqua", "Verde oscuro", "Blanco", "Amarillo", "Naranja", "Azul", "Plateado", "Violeta", "Negro", "Transparente"],
             "pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 100 
     },
@@ -163,6 +172,7 @@
             "tapas fuertes": ["Celeste", "Fucsia", "Rojo", "Verde", "Salmón", "Blanco"],
             "tapas pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 100 
     },
@@ -175,6 +185,7 @@
         "colores": {
             "pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 50 
     },
@@ -187,6 +198,7 @@
         "colores": {
             "fuertes": ["Amarillo", "Azul", "Rojo", "Verde", "Rosa"]      
         },
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 50 
     },
@@ -197,6 +209,7 @@
         "precio": 959,
         "descripcion": "REGADERAS SURTIDAS DE COLORES PASTELES Y MODELOS SURTIDOS.",
         "descripcion2": "Modelo 1: Circunferencia 7,5cm y Alto 11cm aprox. Modelo 2: Circunferencia 10cm y Alto 11cm aprox.",
+        "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 50 
     },

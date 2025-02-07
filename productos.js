@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 infoContainer.classList.add('info-container');
                 infoContainer.innerHTML = `
                     <h3>${product.titulo}</h3>
-                    <p>$${product.precio}</p>
+                    <p>${product.pack}<p>
+                    <h3>$${product.precio}</h3>
                     <div class="product-actions">
                         <button class="more-details" onclick="redirectToDetails('${product.titulo}', ${product.precio}, '${product.id}')">
                             Más detalles
