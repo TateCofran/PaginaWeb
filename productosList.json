@@ -109,7 +109,7 @@
         "id": "bolsas-gracias-por-venir-",
         "titulo": "Bolsas Gracias por venir",
         "images": "images/products/bolsas-gracias-por-venir-/",
-        "precio": 8990,
+        "precio": 9190,
         "descripcion": "Medidas: 20cm de alto y 20cm de ancho aprox.",
         "descripcion2": "Material: Tela Color Crudo con manija de colores.",
         "colores": {
@@ -151,7 +151,7 @@
         "id": "canastas",
         "titulo": "Mini Canastas",
         "images": "images/products/canastas/",
-        "precio": 619,
+        "precio": 789,
         "descripcion": "Medida base 8 , boca 10cm , alto 8,5 , sin contar las manijas.",
         "colores": {
             "fuertes": ["Celeste", "Fucsia", "Rojo", "Verde manzana", "Aqua", "Verde oscuro", "Blanco", "Amarillo", "Naranja", "Azul", "Plateado", "Violeta", "Negro", "Transparente"],
