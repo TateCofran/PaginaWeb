@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function () {
+    updateCartCount();
+});
 
 var navLinks = document.getElementById("navLinks");
 
@@ -149,8 +152,13 @@ const cartCountElement = document.getElementById('cart-count');
 // Función para obtener la cantidad de productos del carrito (suponiendo que usás localStorage)
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartCountElement.textContent = cart.length;
+    let cartCountElement = document.getElementById('cart-count'); // Verificar el elemento
+
+    if (cartCountElement) {
+        cartCountElement.textContent = cart.length;
+    }
 }
+
 
 // Llamar a la función al cargar la página para mostrar la cantidad actual
 document.addEventListener('DOMContentLoaded', updateCartCount);

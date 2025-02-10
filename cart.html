@@ -155,9 +155,27 @@
                 <!-- Los productos del carrito se generarán dinámicamente aquí -->
             </div>
             <div class="subtotal">
-                <h4>TOTAL</h4>
-                <p id="cart-total">$0.00</p>
+                <h4>Precio del producto</h4>
+                <p id="subtotal">$0.00</p>
             </div>
+            
+            <div class="subtotal">
+                <h4>Descuento (15%) <span id="toggleDetail" style="cursor: pointer;">&#9660;</span></h4>
+                <div id="detailSection" style="display: none; padding-left: 10px;">
+                    <p><span id="discount">-$0.00</span></p>
+                </div>
+            </div>
+            
+            <div class="subtotal">
+                <h4>Envío</h4>
+                <p id="envio">$0.00</p>
+            </div>
+            
+            <div class="subtotal total">
+                <h4>Total</h4>
+                <p id="total">$0.00</p>
+            </div>
+            
                 <!-- Sección de Envíos -->
     <div class="shipping-section">
         <h3>ENVÍOS</h3>

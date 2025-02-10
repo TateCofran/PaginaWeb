@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
     const cartItemsList = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
     const flexListContainer = document.getElementById('flex-list-container');
@@ -84,11 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Error:', error));
     }
-
-    // Función para mostrar los productos en el carrito
+    
     function displayCartItems() {
         console.log("Ejecutando displayCartItems...");
+        
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Verificar que los elementos existan en el DOM antes de usarlos
+        const cartItemsList = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('subtotal');
+    
+        if (!cartItemsList || !cartTotalElement) {
+            console.error("Error: Elementos del carrito no encontrados en el DOM.");
+            return;
+        }
+    
         cartItemsList.innerHTML = '';
     
         if (cart.length === 0) {
@@ -97,13 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
     
-        let total = 0;
+        let subtotal = 0;
         let detalleHTML = '<p></p><ul>';
     
         cart.forEach(item => {
             const limits = productLimits[item.id] || { min: 1, max: Infinity };
-            const subtotal = item.price * item.quantity;
-            total += subtotal;
+            const itemSubtotal = item.price * item.quantity;
+            subtotal += itemSubtotal;
     
             // Crear contenedor para cada producto
             const itemContainer = document.createElement('div');
@@ -119,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="number" id="quantity-${item.id}" class="quantity-input" value="${item.quantity}" min="${limits.min}" max="${limits.max}">
                 </div>
                 <div class="item-price">
-                    <p>$${subtotal.toFixed(2)}</p>
+                    <p>$${itemSubtotal.toFixed(2)}</p>
                 </div>
                 <div class="item-actions">
                     <button class="remove-item" data-id="${item.id}">🗑</button>
@@ -127,9 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
     
             cartItemsList.appendChild(itemContainer);
-    
-            // Agregar detalle del producto al resumen
-            //detalleHTML += `<p>${item.quantity}x ${item.name} - $${subtotal.toFixed(2)}</p>`;
     
             // Agregar evento para actualizar cantidad
             const quantityInput = itemContainer.querySelector(`#quantity-${item.id}`);
@@ -158,17 +166,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     
+        // Aplicar descuento del 15%
+        let discount = subtotal * 0.15;
+        let discountedTotal = subtotal - discount;
+    
         // Agregar costo de envío si existe
         if (flexPrice > 0) {
-            detalleHTML += `<p><strong>Envío:</strong> $${flexPrice.toFixed(2)}</p>`;
-            total += flexPrice;
+            //detalleHTML += `<p><strong>Envío:</strong> $${flexPrice.toFixed(2)}</p>`;
+            discountedTotal += flexPrice;
         }
     
-        detalleHTML += `</ul><p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+        detalleHTML += `</ul>
+            <p><strong></strong> $${subtotal.toFixed(2)}</p>`;
     
         // Mostrar el total desglosado en la sección "TU PEDIDO"
         cartTotalElement.innerHTML = detalleHTML;
     }
+    
     
     // Función para eliminar un producto del carrito
     function removeItemFromCart(itemId) {
@@ -231,7 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const flexCheckbox = document.getElementById('flex-delivery');
     const shippingOptions = document.querySelectorAll('input[name="shipping-option"]');
 
-    // Función para cargar el archivo flexList.json
     function loadFlexLocations() {
         fetch('flexList.json')
             .then(response => {
@@ -239,9 +252,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                // Limpiar las opciones actuales
+                if (!data || data.length === 0) {
+                    throw new Error("El archivo flexList.json está vacío o no tiene datos válidos.");
+                }
+    
+                flexData = data; // Guardar los datos en la variable global
+    
                 flexLocationSelect.innerHTML = '<option value="">Selecciona tu ubicación</option>';
-                // Añadir opciones dinámicamente
                 data.forEach(location => {
                     const option = document.createElement('option');
                     option.value = location.flex;
@@ -249,9 +266,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     option.textContent = `${location.flex} - $${location.precio}`;
                     flexLocationSelect.appendChild(option);
                 });
+    
+                console.log("Datos de flex cargados correctamente:");
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error("Error al cargar flexList.json:", error);
+                alert("No se pudieron cargar las opciones de envío. Intenta nuevamente.");
+            });
     }
+    
 
     // Mostrar u ocultar la lista desplegable según el checkbox
     flexCheckbox.addEventListener('change', () => {
@@ -293,11 +316,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para actualizar el precio total
     function updateCartTotal() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        total += flexPrice; // Sumar el precio del envío Flex (si aplica)
-        cartTotalElement.textContent = `$${total.toFixed(2)}`;
+        let subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        let discount = subtotal * 0.15;
+        let discountedTotal = subtotal - discount;
+        let total = discountedTotal + flexPrice; // Agregar el costo de envío
+    
+        // Actualizar valores en la UI
+        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('discount').textContent = `-$${discount.toFixed(2)}`;
+        document.getElementById('envio').textContent = `$${flexPrice.toFixed(2)}`;
+        document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+    
+        // Agregar evento para mostrar/ocultar el detalle del descuento
+        const toggleDetail = document.getElementById('toggleDetail');
+        const detailSection = document.getElementById('detailSection');
+    
+        toggleDetail.addEventListener('click', () => {
+            detailSection.style.display = detailSection.style.display === 'none' ? 'block' : 'none';
+        });
+    
         displayCartItems();
     }
+    
+    
 
     // Inicializar el precio total al cargar la página
     updateCartTotal();
@@ -378,58 +419,83 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         loadFlexLocations();
         // Validar Envío Flex
-        let flexLocation = '';
-        let flexPrice = 0;
-        if (selectedShippingOption.id === 'flex-delivery') {
-            flexLocation = flexLocationSelect.value;
-            if (!flexLocation) {
-                alert('Por favor, selecciona tu ubicación en la lista de Envío Flex.');
-                return;
-            }
+// Inicializar valores de envío
+let flexLocation = '';
+let flexPrice = 0;
 
-            // Buscar el precio del Envío Flex en flexList.json
-            //const flexData = JSON.parse(localStorage.getItem('flexList'));
-            const selectedFlex = flexData.find(flex => flex.flex === flexLocation);
-            if (selectedFlex) {
-                flexPrice = parseFloat(selectedFlex.precio);
-            }
-        }
+if (selectedShippingOption.id === 'flex-delivery') {
+    flexLocation = flexLocationSelect.value.trim(); // Asegurar que no haya espacios en blanco
 
-        // Generar mensaje para WhatsApp
-        let message = `👋 Hola, quiero realizar el siguiente pedido:\n\n`;
-        message += `📋 Datos del comprador:\n`;
-        message += `- Nombre: ${data.firstName}\n`;
-        message += `- Email: ${data.email}\n`;
-        message += `- Teléfono: ${data.phone}\n`;
-        message += `- CUIT/CUIL/DNI: ${data.dni}\n`;
-        message += `- Dirección: ${data.street} ${data.streetNumber}\n`;
-        message += `- Piso/Depto: ${data.floor ? `${data.floor}/` : ''}${data.apartment}\n`;
-        message += `- Localidad: ${data.locality}, ${data.province}\n`;
-        message += `- Código Postal: ${data.postalCode}\n`;
+    if (!flexLocation) {
+        alert('Por favor, selecciona tu ubicación en la lista de Envío Flex.');
+        return;
+    }
 
-        if (data.wantInvoice) {
-            message += `\n📄 Facturación:\n`;
-            message += `- CUIT/CUIL: ${data.cuitCuil}\n`;
-            message += `- Razón Social: ${data.businessName}\n`;
-            message += `- Tipo de Factura: ${data.invoiceType}\n`;
-        }
+    // Asegurar que flexData está cargado antes de buscar el precio
+    if (flexData.length === 0) {
+        console.error("Error: Los datos de flexList.json no han sido cargados.");
+        alert('Error al cargar las opciones de envío. Intenta nuevamente.');
+        return;
+    }
 
-        message += `\n🚚 Método de envío:\n- ${selectedShippingOption.value}\n`;
-        if (flexLocation) message += ` (Ubicación: ${flexLocation})\n`;
+    // Buscar el precio del Envío Flex en flexData
+    const selectedFlex = flexData.find(flex => flex.flex === flexLocation);
+    if (selectedFlex && selectedFlex.precio !== undefined) {
+        flexPrice = parseFloat(selectedFlex.precio);
+    } else {
+        console.warn("Advertencia: No se encontró el precio para la ubicación seleccionada.");
+        flexPrice = 0; // Asignar un valor predeterminado en caso de error
+    }
+}
 
-        message += `\n🛒 Pedido:\n`;
-        let total = 0;
-        cart.forEach(item => {
-            message += `- ${item.quantity}x ${item.name} ($${item.price} c/u) = $${(item.price * item.quantity).toFixed(2)}\n`;
-            total += item.price * item.quantity;
-        });
+// Generar mensaje para WhatsApp
+let message = `👋 Hola, quiero realizar el siguiente pedido:\n\n`;
+message += `📋 Datos del comprador:\n`;
+message += `- Nombre: ${data.firstName}\n`;
+message += `- Email: ${data.email}\n`;
+message += `- Teléfono: ${data.phone}\n`;
+message += `- CUIT/CUIL/DNI: ${data.dni}\n`;
+message += `- Dirección: ${data.street} ${data.streetNumber}\n`;
+message += `- Piso/Depto: ${data.floor ? `${data.floor}/` : ''}${data.apartment}\n`;
+message += `- Localidad: ${data.locality}, ${data.province}\n`;
+message += `- Código Postal: ${data.postalCode}\n`;
 
-        if (flexPrice > 0) {
-            message += `\n🚚 Envío Flex: $${flexPrice.toFixed(2)}\n`;
-            total += flexPrice;
-        }
+if (data.wantInvoice) {
+    message += `\n📄 Facturación:\n`;
+    message += `- CUIT/CUIL: ${data.cuitCuil}\n`;
+    message += `- Razón Social: ${data.businessName}\n`;
+    message += `- Tipo de Factura: ${data.invoiceType}\n`;
+}
 
-        message += `\n💰 Total: $${total.toFixed(2)}\n`;
+message += `\n🚚 Método de envío:\n- ${selectedShippingOption.value}`;
+if (flexLocation) message += ` (Ubicación: ${flexLocation})`;
+message += `\n`;
+
+message += `\n🛒 Pedido:\n`;
+let subtotal = 0;
+cart.forEach(item => {
+    message += `- ${item.quantity}x ${item.name} ($${item.price} c/u) = $${(item.price * item.quantity).toFixed(2)}\n`;
+    subtotal += item.price * item.quantity;
+});
+
+// Aplicar descuento del 15%
+let discount = subtotal * 0.15;
+let discountedTotal = subtotal - discount;
+
+// Sumar el envío
+let total = discountedTotal + flexPrice;
+
+// Agregar detalle de precios
+message += `\n💵 Detalle del pedido:\n`;
+message += `- Subtotal: $${subtotal.toFixed(2)}\n`;
+message += `- Descuento (15%): -$${discount.toFixed(2)}\n`;
+message += `- Envío: $${flexPrice.toFixed(2)}\n`; // Ahora se mostrará correctamente el costo de envío
+message += `\n💰 Total Final: $${total.toFixed(2)}\n`;
+
+// Mostrar mensaje en consola para depuración
+console.log("Mensaje generado para WhatsApp:", message);
+console.log("flexLocation:", flexLocation);
+console.log("flexPrice:", flexPrice);
 
         // Redirigir a WhatsApp
         //alert(`Pedido #${orderId} enviado a WhatsApp.`);

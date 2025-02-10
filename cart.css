@@ -161,20 +161,43 @@ input[type="tel"] {
 }
 
 .subtotal {
-    margin-top: 20px;
-    text-align: right;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 .subtotal h4 {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .subtotal p {
     font-size: 16px;
     font-weight: bold;
     color: #333;
+    text-align: right;
 }
+
+.total h4 {
+    font-weight: bold;
+}
+
+#toggleDetail {
+    font-size: 14px;
+    color: #666;
+}
+
+#detailSection {
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+}
+
+
 
 .actions {
     display: flex;
