@@ -326,14 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('envio').textContent = `$${flexPrice.toFixed(2)}`;
         document.getElementById('total').textContent = `$${total.toFixed(2)}`;
     
-        // Agregar evento para mostrar/ocultar el detalle del descuento
-        const toggleDetail = document.getElementById('toggleDetail');
-        const detailSection = document.getElementById('detailSection');
-    
-        toggleDetail.addEventListener('click', () => {
-            detailSection.style.display = detailSection.style.display === 'none' ? 'block' : 'none';
-        });
-    
         displayCartItems();
     }
     
