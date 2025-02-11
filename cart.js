@@ -183,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cartTotalElement.innerHTML = detalleHTML;
     }
     
-    
     // Función para eliminar un producto del carrito
     function removeItemFromCart(itemId) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
