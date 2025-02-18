@@ -151,7 +151,7 @@
         "id": "canastas",
         "titulo": "Mini Canastas",
         "images": "images/products/canastas/",
-        "precio": 789,
+        "precio": 850,
         "descripcion": "Medida base 8 , boca 10cm , alto 8,5 , sin contar las manijas.",
         "colores": {
             "fuertes": ["Celeste", "Fucsia", "Rojo", "Verde manzana", "Aqua", "Verde oscuro", "Blanco", "Amarillo", "Naranja", "Azul", "Plateado", "Violeta", "Negro", "Transparente"],
@@ -206,7 +206,7 @@
         "id": "regaderas",
         "titulo": "Regaderas",
         "images": "images/products/regaderas/",
-        "precio": 959,
+        "precio": 990,
         "descripcion": "REGADERAS SURTIDAS DE COLORES PASTELES Y MODELOS SURTIDOS.",
         "descripcion2": "Modelo 1: Circunferencia 7,5cm y Alto 11cm aprox. Modelo 2: Circunferencia 10cm y Alto 11cm aprox.",
         "pack": "Precio por unidad",
