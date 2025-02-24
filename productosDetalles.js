@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Ruta base de las imágenes del producto
             const productImagePath = product.images;
+            const productVideoPath = `${productImagePath}videos/${product.id}1.mp4`;
+            //const productVideoThumbnail = `${productImagePath}videos/${product.id}1.jpg`;
 
             // Actualizar la información del producto
             const productImageElement = document.getElementById('product-image');
@@ -83,6 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 thumbnail.onclick = () => updateMainImage(thumbnail.src);
                 thumbnailGallery.appendChild(thumbnail);
             }
+
+            // Agregar miniatura del video si existe
+            checkAndGenerateVideoThumbnail(productVideoPath, thumbnailGallery);
+            
             // Mostrar la cantidad mínima y máxima
             const quantityRangeElement = document.getElementById('product-quantity-range');
             quantityRangeElement.textContent = `Cantidad mínima: ${product.cantidadMinima || 1}, máxima: ${product.cantidadMaxima || 100}`;
@@ -109,6 +115,70 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error al cargar los datos del producto:', error);
         });
 });
+
+// Función para generar la miniatura del video a partir del primer fotograma
+function checkAndGenerateVideoThumbnail(videoPath, container) {
+    fetch(videoPath, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                const video = document.createElement('video');
+                video.src = videoPath;
+                video.crossOrigin = "anonymous";
+                video.preload = "metadata";
+                video.muted = true;
+                video.playsInline = true;
+
+                video.addEventListener('loadeddata', () => {
+                    // Crear un canvas para capturar el primer fotograma
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    canvas.width = video.videoWidth / 2; // Reducimos tamaño
+                    canvas.height = video.videoHeight / 2;
+
+                    video.currentTime = 0.1; // Tomamos el primer fotograma
+
+                    video.addEventListener('seeked', () => {
+                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                        const thumbnailImage = new Image();
+                        thumbnailImage.src = canvas.toDataURL('image/jpeg'); // Convertimos a imagen
+                        thumbnailImage.classList.add('thumbnail');
+                        thumbnailImage.alt = "Vista previa del video";
+                        thumbnailImage.onclick = () => updateMainVideo(videoPath);
+
+                        container.appendChild(thumbnailImage);
+                    });
+                });
+            }
+        })
+        .catch(error => console.error('Error verificando el video:', error));
+}
+
+// Función para actualizar el video en la sección principal
+function updateMainVideo(videoSrc) {
+    const mainContainer = document.querySelector('.product-image');
+
+    // Eliminar cualquier imagen activa
+    const mainImage = document.getElementById('product-image');
+    if (mainImage) mainImage.style.display = 'none';
+
+    // Eliminar cualquier video previo
+    let existingVideo = document.getElementById('product-video');
+    if (existingVideo) {
+        existingVideo.remove();
+    }
+
+    // Crear nuevo elemento de video
+    const videoElement = document.createElement('video');
+    videoElement.id = 'product-video';
+    videoElement.src = videoSrc;
+    videoElement.controls = true;
+    videoElement.autoplay = true;
+    videoElement.classList.add('product-video');
+
+    mainContainer.appendChild(videoElement);
+}
+
 function configureButtons(product, quantityInput) {
     const addToCartButton = document.querySelector('.add-to-cart');
     const buyNowButton = document.querySelector('.buy-now');
@@ -216,6 +286,9 @@ function configureButtons(product, quantityInput) {
 function updateMainImage(src) {
     const mainImage = document.getElementById('product-image');
     mainImage.src = src;
+    mainImage.style.display = 'block'; // Asegura que se muestre
+    const mainVideo = document.getElementById('product-video');
+    if (mainVideo) mainVideo.remove(); // Elimina el video si estaba en reproducción
 }
 function increaseQuantity() {
     const quantityInput = document.getElementById('product-quantity');

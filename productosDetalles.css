@@ -383,7 +383,7 @@ body::before {
 
 
 
-@media (max-width: 412px) {
+@media (max-width: 800px) {
     .product-actions {
         flex-wrap: wrap; /* Permite que los elementos se envuelvan */
         justify-content: center; /* Centra los elementos */
@@ -396,5 +396,14 @@ body::before {
 
     .quantity-control {
         justify-content: center; /* Centra el control de cantidad */
+    }
+
+    /* Estilos responsivos para el video */
+    .product-video {
+        width: 100%; /* El video ocupará todo el ancho disponible */
+        max-width: 100%; /* Evita que se desborde */
+        height: auto; /* Mantiene la proporción del video */
+        border-radius: 10px; /* Bordes redondeados */
+        margin-top: 10px; /* Espaciado superior */
     }
 }
