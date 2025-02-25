@@ -5,28 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas Frecuentes</title>
-    <link rel="stylesheet" href="preguntasFrecuentes.css"> <!-- Archivo CSS independiente -->
+    <link rel="stylesheet" href="preguntasFrecuentes.css">
     <link rel="stylesheet" href="navbar.css">
     <script src="navbar.js" defer></script>
     <link rel="stylesheet" href="whatsappButton.css">
     <script src="whatsappButton.js" defer></script>
     <script src="https://kit.fontawesome.com/2d76f2bdc1.js" crossorigin="anonymous"></script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4QEGL1QY9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-X4QEGL1QY9');
-</script>
 <body>
-    <!-- Navbar -->
+
     <header class="main-header">
         <div class="nav-container">
             <div class="left-section">
-                <!-- Ícono del menú -->
                 <i class="menu-icon fa fa-bars"></i>
                 <a href="index1.html">
                     <img src="images/logo.png" alt="Logo" class="logo">
@@ -45,71 +35,64 @@
                 </a>    
             </div>
         </div>
-            <!-- Menú desplegable -->
-    <ul class="dropdown-menu">
-        <li><a href="index1.html">INICIO</a></li>
-        <li><a href="productos.html">PRODUCTOS</a></li>
-        <li><a href="preguntasFrecuentes.html">PREGUNTAS FRECUENTES</a></li>
-    </ul>
     </header>  
 
-    <h1>Preguntas Frecuentes</h1>
+    <div class="faq-container">
+        <h1>Preguntas Frecuentes</h1>
 
-    <div class="faq-section">
-        <p class="faq-title">¿Puedo elegir los colores que yo quiera?</p>
-        <p class="faq-content">
-            Sí, al realizar la compra en el detalle del pedido nos podes indicar los colores que necesitas.
-            También nos podes preguntar en nuestras redes por la disponibilidad de los colores.
-            En caso de no detallar al momento de la compra los colores, se envían en colores surtidos.
-        </p>
+        <!-- Sección Pedidos -->
+        <h2>Pedidos</h2>
+        <div class="faq-row">
+            <div class="faq-box">
+                <h3>Colores</h3>
+                <p>Los colores son los publicados en la descripción de cada producto, una vez hecho el pedido nos podes indicar los colores que necesitas.</p>
+                <p>En caso de no mandar mensaje con algún color en específico se envían en colores surtidos.</p>
+                <p>En las publicaciones de bolsas, el pack de bolsas es POR COLOR. El pack ya viene cerrado y listo para despachar.</p>
+            </div>
+            <div class="faq-box">
+                <h3>Cantidades</h3>
+                <p>Los productos tienen una cantidad mínima y máxima de compra indicado en el detalle del producto en cuestión.</p>
+                <p>En caso de necesitar más unidades, nos podes contactar por mensaje.</p>
+                <p>Podes agregar al carrito los productos y cantidades que necesites.</p>
+            </div>
+        </div>
+
+        <!-- Sección Envíos -->
+        <h2>Envíos</h2>
+        <div class="faq-row">
+            <div class="faq-box">
+                <h3>Flex</h3>
+                <p>La opción Flex, es Envío en el día. El horario de entrega es de 15 a 22hs, dependiendo del destino puede variar el horario.</p>
+            </div>
+            <div class="faq-box">
+                <h3>Encomienda</h3>
+                <p>Seleccionando la opción de envío por encomienda, se enviará a través de Vía Cargo y SendBox.</p>
+                <p>En caso de devolución del producto, el envío queda a cargo del comprador.</p>
+            </div>
+        </div>
+        <div class="faq-row">
+            <div class="faq-box">
+                <h3>Retiro en Local</h3>
+                <p>La dirección y horarios son los indicados al momento de seleccionar la opción de envío.</p>
+                <p>En caso que se necesite, se puede coordinar un día y horario.</p>
+            </div>
+        </div>
+
+        <!-- Sección Pagos -->
+        <h2>Pagos</h2>
+        <div class="faq-row">
+            <div class="faq-box">
+                <h3>Métodos de Pago</h3>
+                <p>Los métodos de pago utilizados son las opciones de Mercado Pago, efectivo o transferencia.</p>
+                <p>En caso de necesitar Factura, el precio del producto puede variar.</p>
+                <p>El descuento se hace automáticamente sobre el producto, no sobre el envío.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="faq-section">
-        <p class="faq-title">¿Cómo agregar más productos a mi compra?</p>
-        <p class="faq-content">
-            Agregás al carrito el producto deseado y ponés ver más productos del vendedor. Podés agregar todos los 
-            productos que no tengan diseño o tiempo de producción y se te cobra un único envío.
-        </p>
-    </div>
+    <a href="https://wa.me/5491156130340" target="_blank" class="whatsapp-button">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-    <hr>
-
-    <h2>Envíos</h2>
-
-    <div class="faq-section">
-        <p class="faq-title">¿Cuándo me llega a mi domicilio?</p>
-        <p class="faq-content">
-            Ingresando tu código postal donde dice "calcular costo de envío" te aparece la fecha estimada. El envío 
-            puede ser a todo el país por Mercado Envíos.
-        </p>
-    </div>
-
-    <div class="faq-section">
-        <p class="faq-title">FLEX</p>
-        <p class="faq-content">
-            Comprando antes de las 14 hs se despachan en el día para CABA y GBA. Solo tenes que ingresar tu código postal 
-            y te aparece el costo y si te corresponde esta categoría de envío. La mensajería puede llegar de 15 a 21 hs y 
-            no se puede coordinar el horario.
-        </p>
-    </div>
-    <div class="faq-section">
-        <p class="faq-title">¿Puedo retirar mi compra o solo se manejan con envíos?</p>
-        <p class="faq-content">
-            Trabajamos con envios por encomienda, flex y retiro.
-        </p>
-    </div>
-    <hr>
-
-    <div class="faq-section">
-        <p class="faq-title">¿Puedo comprar otra cantidad de las que no están detalladas?</p>
-        <p class="faq-content">
-            Podés comprar la que más se acerque a tu cantidad deseada y luego por mensajería privada nos detallas la 
-            cantidad.
-        </p>
-    </div>
 </body>
-        <!-- Botón de WhatsApp -->
-        <a href="https://wa.me/5491156130340" target="_blank" class="whatsapp-button">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
 </html>
