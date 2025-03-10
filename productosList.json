@@ -226,5 +226,20 @@
         "pack": "Pack de 10 bolsas",
         "cantidadMinima": 1,
         "cantidadMaxima": 10  
+    },
+    {
+        "id": "bolsas-papel",
+        "titulo": "Bolsas de papel",
+        "images": "images/products/bolsas-papel/",
+        "precio": 3000,
+        "descripcion": "Medidas: 12cm ancho, 24cm alto y 7cm base , fuelle.",
+        "descripcion2": "En caso de necesitar un color especifico nos lo podes indicar en el mensaje de la compra.",
+        "colores": {
+            "Surtido fuertes": ["Blanco", "Marrón", "Amarillo", "Naranja", "Negro", "Verde Manzana", "Azul", "Violeta", "Verde Oscuro", "Fucsia", "Rojo"],
+            "Surtido pasteles": ["Rosa", "Lila", "Celeste", "Verde"]          
+        },
+        "pack": "Pack de 10 bolsas",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10  
     }
 ]
