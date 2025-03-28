@@ -151,7 +151,7 @@
         "id": "canastas",
         "titulo": "Mini Canastas",
         "images": "images/products/canastas/",
-        "precio": 850,
+        "precio": 950,
         "descripcion": "Medida base 8 , boca 10cm , alto 8,5 , sin contar las manijas.",
         "colores": {
             "fuertes": ["Celeste", "Fucsia", "Rojo", "Verde manzana", "Aqua", "Verde oscuro", "Blanco", "Amarillo", "Naranja", "Azul", "Plateado", "Violeta", "Negro", "Transparente"],
