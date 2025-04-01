@@ -241,5 +241,33 @@
         "pack": "Pack de 10 bolsas",
         "cantidadMinima": 1,
         "cantidadMaxima": 10  
+    },
+    {
+        "id": "vasos-n1-",
+        "titulo": "Vasos Tapa plana con sorbete",
+        "images": "images/products/vasos-n1-/",
+        "precio": 729,
+        "descripcion": "Medidas: 12 cm de alto; 6,5cm de diámetro y capacidad 275cc.",
+        "descripcion2": "Sorbetes negros/transparentes según stock",
+        "colores": {
+            "Pasteles": ["Celeste", "Rosa", "Amarillo", "Verde", "Lila"],
+            "Fluors": ["Rosa", "Naranja", "Verde"]      
+        },
+        "pack": "Precio por unidad",
+        "cantidadMinima": 10,
+        "cantidadMaxima": 100 
+    },
+    {
+        "id": "cajitas",
+        "titulo": "Cajitas",
+        "images": "images/products/cajitas/",
+        "precio": 125,
+        "descripcion": "Medidas: 8cm ancho, 8cm largo y 4.5cm alto",
+        "colores": {
+            "Pasteles": ["Azul", "Rosa"]   
+        },
+        "pack": "Precio por unidad",
+        "cantidadMinima": 10,
+        "cantidadMaxima": 100 
     }
 ]
