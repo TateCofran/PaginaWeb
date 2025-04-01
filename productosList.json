@@ -269,5 +269,16 @@
         "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 100 
+    },
+    {
+        "id": "difusores",
+        "titulo": "Difusores + Varillas",
+        "images": "images/products/difusores/",
+        "precio": 839,
+        "descripcion": "Medidas difusor: Alto 10cm y ancho 4,5cm. Capacidad 125cc.",
+        "descripcion2": "Tapa a rosca de metal, se envían 5 varillas con cada difusor",
+        "pack": "Precio por unidad",
+        "cantidadMinima": 10,
+        "cantidadMaxima": 100 
     }
 ]
