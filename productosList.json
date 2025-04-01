@@ -180,7 +180,7 @@
         "id": "valijitas-golosineras",
         "titulo": "Valijas Golosineras",
         "images": "images/products/valijitas-golosineras/",
-        "precio": 998,
+        "precio": 1050,
         "descripcion": "Medidas: Alto 10cm, Ancho 17cm.",
         "colores": {
             "pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
@@ -193,7 +193,7 @@
         "id": "compoteras",
         "titulo": "Compoteras",
         "images": "images/products/compoteras/",
-        "precio": 539,
+        "precio": 619,
         "descripcion": "Medidas tapa 9 cm diámetro, Altura 4,5 cm.",
         "colores": {
             "fuertes": ["Amarillo", "Azul", "Rojo", "Verde", "Rosa"]      
