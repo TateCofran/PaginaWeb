@@ -166,8 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     
-        // Aplicar descuento del 15%
-        let discount = subtotal * 0.15;
+        // Aplicar descuento del 15% - 20% hasta el 7/4
+        let discount = subtotal * 0.20;
         let discountedTotal = subtotal - discount;
     
         // Agregar costo de envío si existe
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCartTotal() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         let subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        let discount = subtotal * 0.15;
+        let discount = subtotal * 0.20;
         let discountedTotal = subtotal - discount;
         let total = discountedTotal + flexPrice; // Agregar el costo de envío
     
@@ -469,8 +469,8 @@ cart.forEach(item => {
     subtotal += item.price * item.quantity;
 });
 
-// Aplicar descuento del 15%
-let discount = subtotal * 0.15;
+// Aplicar descuento del 15% - 20 hasta el 7 de abriñ
+let discount = subtotal * 0.20;
 let discountedTotal = subtotal - discount;
 
 // Sumar el envío
@@ -479,7 +479,7 @@ let total = discountedTotal + flexPrice;
 // Agregar detalle de precios
 message += `\n💵 Detalle del pedido:\n`;
 message += `- Subtotal: $${subtotal.toFixed(2)}\n`;
-message += `- Descuento (15%): -$${discount.toFixed(2)}\n`;
+message += `- Descuento (20%): -$${discount.toFixed(2)}\n`;
 message += `- Envío: $${flexPrice.toFixed(2)}\n`; // Ahora se mostrará correctamente el costo de envío
 message += `\n💰 Total Final: $${total.toFixed(2)}\n`;
 
