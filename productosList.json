@@ -261,7 +261,7 @@
         "id": "cajitas",
         "titulo": "Cajitas",
         "images": "images/products/cajitas/",
-        "precio": 125,
+        "precio": 1250,
         "descripcion": "Medidas: 8cm ancho, 8cm largo y 4.5cm alto",
         "colores": {
             "Pasteles": ["Azul", "Rosa"]   
