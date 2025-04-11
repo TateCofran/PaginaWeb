@@ -280,5 +280,18 @@
         "pack": "Precio por unidad",
         "cantidadMinima": 10,
         "cantidadMaxima": 100 
+    },
+    {
+        "id": "corazones",
+        "titulo": "Corazones - Cristal",
+        "images": "images/products/corazones/",
+        "precio": 739,
+        "descripcion": "Medidas 10 cm de alto con tapa, 7,5 cm de ancho y capacidad 125 cc.",
+        "colores": {
+            "Pasteles": ["Rosa", "Lila", "Celeste", "Verde"]   
+        },
+        "pack": "Precio por unidad",
+        "cantidadMinima": 10,
+        "cantidadMaxima": 50 
     }
 ]
