@@ -258,6 +258,19 @@
         "cantidadMaxima": 100 
     },
     {
+        "id": "vasos-eco",
+        "titulo": "Vasos 250cc",
+        "images": "images/products/vasos-eco/",
+        "precio": 489,
+        "descripcion": "Medida 9,5 alto, Base 4,4 (17cm diámetro), Boca 6,5 (21 cm diámetro), Capacidad 250cc",
+        "colores": {
+            "Pasteles": ["Celeste", "Rosa", "Amarillo", "Verde", "Lila"]   
+        },
+        "pack": "Precio por unidad",
+        "cantidadMinima": 10,
+        "cantidadMaxima": 100 
+    },
+    {
         "id": "cajitas",
         "titulo": "Cajitas",
         "images": "images/products/cajitas/",
@@ -289,6 +302,20 @@
         "descripcion": "Medidas 10 cm de alto con tapa, 7,5 cm de ancho y capacidad 125 cc.",
         "colores": {
             "Pasteles": ["Rosa", "Lila", "Celeste", "Verde"]   
+        },
+        "pack": "Precio por unidad",
+        "cantidadMinima": 10,
+        "cantidadMaxima": 50 
+    },
+    {
+        "id": "vasos-milkshake",
+        "titulo": "Vasos Milkshake c/ sorbete",
+        "images": "images/products/vasos-milkshake/",
+        "precio": 789,
+        "descripcion": "Medida: alto 10,5 -sin tapa, Boca: 25cm diámetro, Base: 20cm diámetro. Capacidad 325cc",
+        "colores": {
+            "Pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Naranja", "Amarillo"],
+            "Fuerte": ["Rojo","Verde", "Azul"]   
         },
         "pack": "Precio por unidad",
         "cantidadMinima": 10,
