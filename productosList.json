@@ -3,7 +3,7 @@
         "id": "alcancias",
         "titulo": "Alcancias",
         "images": "images/products/alcancias/",
-        "precio": 879,
+        "precio": 719,
         "descripcion": "Medidas: Diámetro 8,5 cm y alto 9 cm.",
         "colores": {
             "pasteles": ["Celeste", "Lila", "Rosa", "Verde"],
@@ -17,7 +17,7 @@
         "id": "botellas750cc",
         "titulo": "Botellas 750cc",
         "images": "images/products/botellas750cc/",
-        "precio": 929,
+        "precio": 790,
         "descripcion": "Medidas: 24x7, 750cc.",
         "colores": {
             "pasteles": ["Celeste", "Lila", "Rosa", "Verde"],
@@ -31,7 +31,7 @@
         "id": "botellas500cc",
         "titulo": "Botellas 500cc",
         "images": "images/products/botellas500cc/",
-        "precio": 889,
+        "precio": 729,
         "descripcion": "Medidas: 19x6cm, 500cc.",
         "colores": {
             "pasteles": ["Verde Agua", "Lila", "Rosa", "Celeste"],
@@ -45,7 +45,7 @@
         "id": "botellas750cc-ancha",
         "titulo": "Botellas 750cc - Boca ancha",
         "images": "images/products/botellas750cc-ancha/",
-        "precio": 920,
+        "precio": 780,
         "descripcion": "Medidas: 24x7, 750cc.",
         "colores": ["Verde Pastel", "Aqua", "Naranja", "Turquesa", "Rosa Pastel", "Amarillo", "Verde Manzana", "Verde", "Rojo", "Negro", "Lila", "Azul"],
         "pack": "Precio por unidad",
@@ -56,7 +56,7 @@
         "id": "mini-botellas",
         "titulo": "Mini Botellas con Sorbetes",
         "images": "images/products/mini-botellas/",
-        "precio": 779,
+        "precio": 690,
         "descripcion": "Medidas: 14cm de alto, 190cc.",
         "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
@@ -71,7 +71,7 @@
         "id": "mini-botellas-corona",
         "titulo": "Mini Botellas - Tapa ciega",
         "images": "images/products/mini-botellas-corona/",
-        "precio": 829,
+        "precio": 700,
         "descripcion": "Medidas: 14cm de alto, 190cc.",
         "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
@@ -85,7 +85,7 @@
         "id": "bolsas-totebag",
         "titulo": "Bolsas Tote Bag",
         "images": "images/products/bolsas-totebag/",
-        "precio": 9980,
+        "precio": 8000,
         "descripcion": "Medidas 15 alto x 20. Fuelle , base 10cm aprox.",
         "pack":"Pack de 10 bolsas",
         "cantidadMinima": 1,
@@ -95,7 +95,7 @@
         "id": "bolsas-8x10-",
         "titulo": "Bolsas lienzo 8x10",
         "images": "images/products/bolsas-8x10-/",
-        "precio": 4090,
+        "precio": 3090,
         "descripcion": "Medidas: 10cm de alto y 8cm de ancho aprox.",
         "descripcion2": "Material: Tela - Algodón Color Crudo. Soga ajustable.",
         "colores": {
@@ -109,7 +109,7 @@
         "id": "bolsas-gracias-por-venir-",
         "titulo": "Bolsas Gracias por venir",
         "images": "images/products/bolsas-gracias-por-venir-/",
-        "precio": 10900,
+        "precio": 9090,
         "descripcion": "Medidas: 20cm de alto y 20cm de ancho aprox.",
         "descripcion2": "Material: Tela Color Crudo con manija de colores.",
         "colores": {
@@ -123,7 +123,7 @@
         "id": "ositos-sorbetes",
         "titulo": "Ositos con Sorbetes",
         "images": "images/products/ositos-sorbetes/",
-        "precio": 789,
+        "precio": 690,
         "descripcion": "Medidas 14 cm de alto, Capacidad 240 cc.",
         "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
@@ -137,7 +137,7 @@
         "id": "tubos-de-ensayo-13cm-",
         "titulo": "Tubos de ensayo 13cm",
         "images": "images/products/tubos-de-ensayo-13cm-/",
-        "precio": 709,
+        "precio": 619,
         "descripcion": "Medidas: Alto 13cm.",
         "colores": {
             "Tapas fuertes": ["Verde", "Rojo"],
@@ -151,7 +151,7 @@
         "id": "canastas",
         "titulo": "Mini Canastas",
         "images": "images/products/canastas/",
-        "precio": 1490,
+        "precio": 990,
         "descripcion": "Medida base 8 , boca 10cm , alto 8,5 , sin contar las manijas.",
         "colores": {
             "fuertes": ["Celeste", "Fucsia", "Rojo", "Verde manzana", "Aqua", "Verde oscuro", "Blanco", "Amarillo", "Naranja", "Azul", "Plateado", "Violeta", "Negro", "Transparente"],
@@ -180,7 +180,7 @@
         "id": "valijitas-golosineras",
         "titulo": "Valijas Golosineras",
         "images": "images/products/valijitas-golosineras/",
-        "precio": 1690,
+        "precio": 1290,
         "descripcion": "Medidas: Alto 10cm, Ancho 17cm.",
         "colores": {
             "pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
@@ -206,7 +206,7 @@
         "id": "regaderas",
         "titulo": "Regaderas",
         "images": "images/products/regaderas/",
-        "precio": 1990,
+        "precio": 1290,
         "descripcion": "REGADERAS SURTIDAS DE COLORES PASTELES Y MODELOS SURTIDOS.",
         "descripcion2": "Modelo 1: Circunferencia 7,5cm y Alto 11cm aprox. Modelo 2: Circunferencia 10cm y Alto 11cm aprox.",
         "pack": "Precio por unidad",
@@ -217,7 +217,7 @@
         "id": "bolsas-arpilleras-20x13-",
         "titulo": "Bolsas arpilleras 20x13",
         "images": "images/products/bolsas-arpilleras-20x13-/",
-        "precio": 9890,
+        "precio": 8900,
         "descripcion": "Medidas: 20cm de alto y 13cm de ancho aprox.",
         "descripcion2": "Material: Arpillera.",
         "colores": {
@@ -246,7 +246,7 @@
         "id": "vasos-n1-",
         "titulo": "Vasos Tapa plana con sorbete",
         "images": "images/products/vasos-n1-/",
-        "precio": 729,
+        "precio": 609,
         "descripcion": "Medidas: 12 cm de alto; 6,5cm de diámetro y capacidad 275cc.",
         "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
@@ -261,7 +261,7 @@
         "id": "vasos-eco",
         "titulo": "Vasos 250cc",
         "images": "images/products/vasos-eco/",
-        "precio": 489,
+        "precio": 359,
         "descripcion": "Medida 9,5 alto, Base 4,4 (17cm diámetro), Boca 6,5 (21 cm diámetro), Capacidad 250cc",
         "colores": {
             "Pasteles": ["Celeste", "Rosa", "Amarillo", "Verde", "Lila"]   
@@ -274,7 +274,7 @@
         "id": "cajitas",
         "titulo": "Cajitas",
         "images": "images/products/cajitas/",
-        "precio": 1690,
+        "precio": 1190,
         "descripcion": "Medidas: 8cm ancho, 8cm largo y 4.5cm alto",
         "colores": {
             "Pasteles": ["Azul", "Rosa"]   
@@ -311,7 +311,7 @@
         "id": "vasos-milkshake",
         "titulo": "Vasos Milkshake c/ sorbete",
         "images": "images/products/vasos-milkshake/",
-        "precio": 789,
+        "precio": 659,
         "descripcion": "Medida: alto 10,5 -sin tapa, Boca: 25cm diámetro, Base: 20cm diámetro. Capacidad 325cc",
         "colores": {
             "Pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Naranja", "Amarillo"],
