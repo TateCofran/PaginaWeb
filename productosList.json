@@ -34,8 +34,8 @@
         "precio": 729,
         "descripcion": "Medidas: 19x6cm, 500cc.",
         "colores": {
-            "pasteles": ["Verde Agua", "Lila", "Rosa", "Celeste"],
-            "fuertes": ["Blanco", "Naranja", "Negro", "Verde", "Rojo", "Celeste", "Azul", "Turquesa", "Rosa", "Amarillo"]
+            "pasteles": ["Verde", "Lila", "Rosa", "Celeste"],
+            "fuertes": ["Blanco", "Naranja", "Negro", "Verde", "Rojo", "Azul", "Turquesa", "Rosa", "Amarillo"]
         },
         "pack": "Precio por unidad",
         "cantidadMinima": 10,
