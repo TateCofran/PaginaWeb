@@ -3,7 +3,7 @@
         "id": "alcancias",
         "titulo": "Alcancias",
         "images": "images/products/alcancias/",
-        "precio": 719,
+        "precio": 779,
         "descripcion": "Medidas: Diámetro 8,5 cm y alto 9 cm.",
         "colores": {
             "pasteles": ["Celeste", "Lila", "Rosa", "Verde"],
@@ -165,7 +165,7 @@
         "id": "vasos-acrilicos",
         "titulo": "Vasos acrílicos con sorbete",
         "images": "images/products/vasos-acrilicos/",
-        "precio": 980,
+        "precio": 1090,
         "descripcion": "Medidas aproximadas: Diametro 8,5cm. Altura con la tapa 16 cm. Capacidad 475cc",
         "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
@@ -180,7 +180,7 @@
         "id": "valijitas-golosineras",
         "titulo": "Valijas Golosineras",
         "images": "images/products/valijitas-golosineras/",
-        "precio": 1290,
+        "precio": 1539,
         "descripcion": "Medidas: Alto 10cm, Ancho 17cm.",
         "colores": {
             "pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Amarillo"]      
@@ -246,7 +246,7 @@
         "id": "vasos-n1-",
         "titulo": "Vasos Tapa plana con sorbete",
         "images": "images/products/vasos-n1-/",
-        "precio": 609,
+        "precio": 670,
         "descripcion": "Medidas: 12 cm de alto; 6,5cm de diámetro y capacidad 275cc.",
         "descripcion2": "Sorbetes negros/transparentes según stock",
         "colores": {
@@ -261,7 +261,7 @@
         "id": "vasos-eco",
         "titulo": "Vasos 250cc",
         "images": "images/products/vasos-eco/",
-        "precio": 359,
+        "precio": 390,
         "descripcion": "Medida 9,5 alto, Base 4,4 (17cm diámetro), Boca 6,5 (21 cm diámetro), Capacidad 250cc",
         "colores": {
             "Pasteles": ["Celeste", "Rosa", "Amarillo", "Verde", "Lila"]   
@@ -311,7 +311,7 @@
         "id": "vasos-milkshake",
         "titulo": "Vasos Milkshake c/ sorbete",
         "images": "images/products/vasos-milkshake/",
-        "precio": 659,
+        "precio": 709,
         "descripcion": "Medida: alto 10,5 -sin tapa, Boca: 25cm diámetro, Base: 20cm diámetro. Capacidad 325cc",
         "colores": {
             "Pasteles": ["Rosa", "Lila", "Celeste", "Verde", "Naranja", "Amarillo"],
