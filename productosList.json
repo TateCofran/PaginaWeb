@@ -95,7 +95,7 @@
         "id": "bolsas-8x10-",
         "titulo": "Bolsas lienzo 8x10",
         "images": "images/products/bolsas-8x10-/",
-        "precio": 3090,
+        "precio": 3590,
         "descripcion": "Medidas: 10cm de alto y 8cm de ancho aprox.",
         "descripcion2": "Material: Tela - Algodón Color Crudo. Soga ajustable.",
         "colores": {
@@ -206,7 +206,7 @@
         "id": "regaderas",
         "titulo": "Regaderas",
         "images": "images/products/regaderas/",
-        "precio": 1290,
+        "precio": 1529,
         "descripcion": "REGADERAS SURTIDAS DE COLORES PASTELES Y MODELOS SURTIDOS.",
         "descripcion2": "Modelo 1: Circunferencia 7,5cm y Alto 11cm aprox. Modelo 2: Circunferencia 10cm y Alto 11cm aprox.",
         "pack": "Precio por unidad",
@@ -274,7 +274,7 @@
         "id": "cajitas",
         "titulo": "Cajitas",
         "images": "images/products/cajitas/",
-        "precio": 1190,
+        "precio": 1249,
         "descripcion": "Medidas: 8cm ancho, 8cm largo y 4.5cm alto",
         "colores": {
             "Pasteles": ["Azul", "Rosa"]   
