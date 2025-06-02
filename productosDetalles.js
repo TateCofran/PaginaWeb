@@ -1,3 +1,6 @@
+let minQuantity = 1;
+let maxQuantity = 100;
+
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id'); // ID del producto
@@ -6,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error: Falta información del producto en los parámetros de la URL.');
         return;
     }
-    // Cargar datos del JSON
+// Cargar datos del JSON
     fetch('productosList.json')
         .then(response => {
             if (!response.ok) {
@@ -28,87 +31,95 @@ document.addEventListener('DOMContentLoaded', () => {
             // Ruta base de las imágenes del producto
             const productImagePath = product.images;
             const productVideoPath = `${productImagePath}videos/${product.id}1.mp4`;
-            //const productVideoThumbnail = `${productImagePath}videos/${product.id}1.jpg`;
 
-            // Actualizar la información del producto
+            // Elementos del DOM (validando que existan)
             const productImageElement = document.getElementById('product-image');
             const thumbnailGallery = document.getElementById('thumbnail-gallery');
+            const productNameElem = document.getElementById('product-name');
+            const productPriceElem = document.getElementById('product-price');
+            const productDescElem = document.getElementById('product-description');
+            const productDesc2Elem = document.getElementById('product-description2');
+            const productPackElem = document.getElementById('product-pack');
+            const colorSection = document.getElementById('product-colors');
+            const colorList = document.getElementById('color-list');
+            const quantityRangeElement = document.getElementById('product-quantity-range');
+            const quantityInput = document.getElementById('product-quantity');
 
             // Configurar la imagen principal
-            productImageElement.src = `${productImagePath}${productId}1.jpg`;
-            productImageElement.alt = `Imagen principal de ${product.titulo}`;
+            if (productImageElement) {
+                productImageElement.src = `${productImagePath}${productId}1.jpg`;
+                productImageElement.alt = `Imagen principal de ${product.titulo}`;
+            }
 
             // Configurar el nombre, precio y descripción del producto
-            document.getElementById('product-name').textContent = product.titulo;
-            document.getElementById('product-price').textContent = `$${product.precio}`;
-            document.getElementById('product-description').textContent = product.descripcion;
-            
-            // Mostrar descripción secundaria (si existe)
-            if (product.descripcion2) {
-                document.getElementById('product-description2').textContent = product.descripcion2;
+            if (productNameElem) productNameElem.textContent = product.titulo;
+            if (productPriceElem) productPriceElem.textContent = `$${product.precio}`;
+            if (productDescElem) productDescElem.textContent = product.descripcion;
+            if (productDesc2Elem && product.descripcion2) productDesc2Elem.textContent = product.descripcion2;
+
+            // Mostrar el pack, o valor por defecto
+            if (productPackElem) {
+                productPackElem.textContent = product.pack ? product.pack : 'Consulta por packs';
             }
 
-            if (product.pack) {
-                document.getElementById('product-pack').textContent = product.pack;
-            }
             // Mostrar colores si están disponibles
-            const productColors = product.colores;
-            if (productColors) {
-                const colorList = document.getElementById('color-list');
-
-                if (Array.isArray(productColors)) {
+            if (product.colores && colorList) {
+                colorList.innerHTML = ""; // Limpia antes de agregar nuevos
+                if (Array.isArray(product.colores)) {
                     // Si los colores son un array simple
-                    const colorsText = productColors.join(', '); // Une los colores con comas
+                    const colorsText = product.colores.join(', ');
                     const colorItem = document.createElement('p');
                     colorItem.textContent = `Colores: ${colorsText}`;
                     colorList.appendChild(colorItem);
                 } else {
-                    // Si los colores están organizados en categorías (e.g., pasteles, fuertes)
-                    for (const [category, colors] of Object.entries(productColors)) {
-                        // Crear título para la categoría
+                    // Si los colores están organizados en categorías
+                    for (const [category, colors] of Object.entries(product.colores)) {
                         const categoryTitle = document.createElement('p');
-                        categoryTitle.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)}`;
                         categoryTitle.innerHTML = `<strong>${category.charAt(0).toUpperCase() + category.slice(1)}:</strong> ${colors.join(', ')}`;
                         colorList.appendChild(categoryTitle);
                     }
                 }
-            } else {
-                document.getElementById('product-colors').style.display = 'none'; // Oculta la sección si no hay colores
+                if (colorSection) colorSection.style.display = '';
+            } else if (colorSection) {
+                colorSection.style.display = 'none'; // Oculta la sección si no hay colores
             }
 
             // Generar las miniaturas dinámicamente
-            for (let i = 1; i <= 3; i++) {
-                const thumbnail = document.createElement('img');
-                thumbnail.src = `${productImagePath}${product.id}${i}.jpg`;
-                thumbnail.alt = `Miniatura ${i} de ${product.titulo}`;
-                thumbnail.classList.add('thumbnail');
-                thumbnail.onclick = () => updateMainImage(thumbnail.src);
-                thumbnailGallery.appendChild(thumbnail);
+            if (thumbnailGallery) {
+                thumbnailGallery.innerHTML = ""; // Limpia antes de agregar
+                for (let i = 1; i <= 3; i++) {
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = `${productImagePath}${product.id}${i}.jpg`;
+                    thumbnail.alt = `Miniatura ${i} de ${product.titulo}`;
+                    thumbnail.classList.add('thumbnail');
+                    thumbnail.onclick = () => updateMainImage(thumbnail.src);
+                    thumbnailGallery.appendChild(thumbnail);
+                }
+                // Agregar miniatura del video si existe
+                checkAndGenerateVideoThumbnail(productVideoPath, thumbnailGallery);
             }
 
-            // Agregar miniatura del video si existe
-            checkAndGenerateVideoThumbnail(productVideoPath, thumbnailGallery);
-            
             // Mostrar la cantidad mínima y máxima
-            const quantityRangeElement = document.getElementById('product-quantity-range');
-            quantityRangeElement.textContent = `Cantidad mínima: ${product.cantidadMinima || 1}, máxima: ${product.cantidadMaxima || 100}`;
-
-            const quantityInput = document.getElementById('product-quantity');
             minQuantity = product.cantidadMinima || 1;
             maxQuantity = product.cantidadMaxima || 100;
+            if (quantityRangeElement) {
+                quantityRangeElement.textContent = `Cantidad mínima: ${minQuantity}, máxima: ${maxQuantity}`;
+            }
+            if (quantityInput) {
+                quantityInput.min = minQuantity;
+                quantityInput.max = maxQuantity;
+                quantityInput.value = minQuantity;
 
-            quantityInput.min = minQuantity;
-            quantityInput.max = maxQuantity;
-            quantityInput.value = minQuantity;
+                quantityInput.addEventListener('input', () => {
+                    const currentValue = parseInt(quantityInput.value, 10);
+                    if (isNaN(currentValue) || currentValue < minQuantity) {
+                        quantityInput.value = minQuantity;
+                    } else if (currentValue > maxQuantity) {
+                        quantityInput.value = maxQuantity;
+                    }
+                });
+            }
 
-            quantityInput.addEventListener('input', () =>{
-                const currentValue = parseInt(quantityInput.value,10);
-                if(isNaN(currentValue)||currentValue < minQuantity){
-                    quantityInput.value = minQuantity;
-                }else if(currentValue > maxQuantity){
-                    quantityInput.value = maxQuantity;
-                }
-            })
             configureButtons(product, quantityInput);
         })
         .catch(error => {

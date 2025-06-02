@@ -196,20 +196,21 @@ nav .fa{
 
 .products-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .product-item {
-    background-color: transparent; /* Fondo transparente general */
-    border-radius: 10px;
-    text-align: center;
-    overflow: hidden; /* Asegura que el contenido no se desborde */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #0001;
+    overflow: hidden;
+    justify-content: flex-start;
+    min-height: 380px; /* Ajustá a tu gusto, hace que todas sean iguales */
+    position: relative;
 }
 
 .product-item:hover {
@@ -217,85 +218,59 @@ nav .fa{
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Imagen arriba, bien proporcionada: */
 .image-container {
-    background-color: rgba(253, 228, 207, 1); /* Fondo crema */
-    width: 300px; /* Ancho fijo */
-    height: 400px; /* Altura fija */
-    display: flex; /* Para centrar la imagen si es más pequeña */
+    width: 100%;
+    aspect-ratio: 1/1; /* Hace la imagen cuadrada y nunca cortada en altura */
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;    
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    overflow: hidden; /* Asegura que la imagen no se desborde */
-    margin: 0 auto; /* Centra el contenedor en el eje horizontal */
+    overflow: hidden;
 }
-
-.product-item img {
+.image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen para que llene el contenedor sin deformarse */
-    border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
+    object-fit: cover; /* o contain si preferís que no corte nunca nada */
+    display: block;
 }
 
-
-
+/* Info del producto: */
 .info-container {
-    background-color: rgba(255, 255, 255, 1); /* Fondo rosa para el texto */
-    padding: 15px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;  /* El info-container toma el resto de la tarjeta */
+    align-items: center;
+    padding: 16px 8px 18px 8px;
+    background: #fff;
+    justify-content: flex-start;
+    min-height: 120px;
+}
+/* Asegura que el botón SIEMPRE esté abajo de todo: */
+.product-actions {
+    margin-top: auto;   /* Lo empuja al fondo del info-container */
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.product-item h3 {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #333;
-}
-
-.product-item p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
-}
-
-.product-item button {
-    padding: 10px 15px;
-    background-color: #007bff; /* Sin fondo */
-    color: #ffffff; /* Color del texto */
-    border: 2px solid ; /* Contorno definido */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    margin: 5px;
-    text-align: center;
-}
-
-.product-item button:hover {
-    background-color:  #0056b3; /* Fondo negro al pasar el mouse */
-    color: #fff; /* Texto blanco al pasar el mouse */
-    
-}
-
-
-/* Botón Más detalles */
+/* Botón ancho y bonito: */
 .more-details {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: transparent; /* Sin fondo */
-    color: black;
-    border: 2px solid black; /* Bordes negros */
-    border-radius: 5px;
-    font-size: 14px;
+    width: 90%;
+    padding: 11px 0;
+    font-size: 16px;
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+    margin: 0 auto 0 auto;
+    box-shadow: 0 1px 5px #0002;
+    transition: background 0.2s;
 }
-
 .more-details:hover {
-    background-color: rgb(0, 0, 0); /* Fondo negro al pasar el mouse */
-    color: white; /* Texto blanco al pasar el mouse */
+    background: #1158b0;
 }
 
 /* Sección Nosotros */
@@ -502,111 +477,143 @@ nav .fa{
     background: #f44336;
     transition: 1s;
 }
-
-@media (max-width: 412px) {
+@media (max-width: 480px) {
     body {
-        padding: 10px; /* Reduce el padding general */
+        padding: 0;
+        font-size: 15px;
+        overflow-x: hidden;
     }
-
     .header {
-        min-height: 80vh; /* Ajusta la altura del encabezado */
-        background-size: cover; /* Mantiene la proporción de la imagen */
+        min-height: 60vh; /* Puede ser menos para ver más contenido sin scrollear */
+        background-size: cover;
+        background-position: center;
     }
 
+    .nav-links {
+        position: static; /* Asegura que el menú no se superponga raro */
+        width: 100%;
+        background: #fff; /* O tu color de fondo, para mayor contraste */
+    }
+    .nav-links ul {
+        flex-direction: column; /* Stacking vertical en menú si aplica */
+        gap: 4px;
+    }
     .nav-links ul li {
-        font-size: 12px; /* Ajusta el tamaño del texto en los enlaces */
-        padding: 6px; /* Reduce el espaciado */
+        font-size: 14px;
+        padding: 6px;
     }
 
     .text-box {
-        width: 95%; /* Asegura que el texto no se desborde */
-        top: 40%; /* Ajusta la posición vertical */
+        width: 100%;
+        top: 30%; /* Baja un poco la posición si lo ves cortado */
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        text-align: center;
     }
 
     .text-box h1 {
-        font-size: 24px; /* Reduce el tamaño del título */
+        font-size: 22px;
+        line-height: 1.1;
     }
-
     .text-box p {
-        font-size: 16px; /* Reduce el tamaño del subtítulo */
+        font-size: 14px;
+        line-height: 1.3;
     }
 
     .btn {
-        padding: 8px 12px; /* Reduce el tamaño del botón */
-        font-size: 12px; /* Ajusta el texto del botón */
+        padding: 10px 16px;
+        font-size: 13px;
+        width: 90%; /* Botones más anchos, fácil de presionar */
+        margin: 0 auto;
+        display: block;
     }
 
+
     .slider {
-        margin-top: 20px; /* Reduce el espacio superior */
-        height: 50vh; /* Ajusta la altura del slider */
+        width: 85%;        
+        height: 100%;   
+
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider-container {
+        display: flex;
+        width: 100%;
+        max-width: 90%;
+        height: 100%;
+        max-height: 200px;    /* Limita la altura máxima */
+        min-height: 120px;    /* Para pantallas muy chicas */
+        overflow: hidden;
     }
 
     .slider-image {
-        object-fit: contain; /* Asegura que las imágenes se adapten sin cortarse */
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        padding: auto;
+        object-fit: cover;
+        display: block;
+        flex: 0 0 100%;
     }
 
-    .productos-destacados {
-        margin: 20px 0; /* Reduce los márgenes */
-    }
-
-    .products-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el diseño de la cuadrícula */
-        gap: 10px; /* Reduce el espacio entre productos */
-    }
-
-    .product-item {
-        width: 100%; /* Asegura que el producto ocupe todo el ancho disponible */
-    }
-
-    .image-container {
-        width: 100%; /* Ajusta el ancho */
-        height: 200px; /* Reduce la altura */
-    }
-
-    .product-item img {
-        object-fit: cover; /* Asegura que las imágenes se adapten bien */
-    }
-
-    .info-container {
-        padding: 10px; /* Reduce el espaciado interno */
-    }
-
-    .product-item h3 {
-        font-size: 16px; /* Reduce el tamaño del título del producto */
-    }
-
-    .product-item p {
-        font-size: 14px; /* Reduce el tamaño del precio */
-    }
-
+.products-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 6px;
+  }
+  .product-item {
+    min-height: 0;
+    padding-bottom: 12px;
+  }
+  .image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: auto;
+    min-height: 0;
+    max-height: 250px;
+  }
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 6px;
+    min-height: 0;
+    justify-content: flex-start;
+  }
+  .product-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .more-details {
+    width: 100%;
+    padding: 11px 0;
+    margin: 0;
+    font-size: 16px;
+  }
     .nosotros-container {
-        flex-direction: column; /* Cambia el diseño a columnas */
-        gap: 15px; /* Ajusta el espacio entre elementos */
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 2px;
     }
-
     .tutorial-col {
-        flex-basis: 100%; /* Asegura que cada columna ocupe todo el ancho */
-        margin-bottom: 20px; /* Reduce el margen inferior */
-    }
-
-    .productos {
-        width: 100%; /* Ajusta el ancho de la sección */
-    }
-
-    .productos-box {
-        padding: 15px; /* Reduce el espaciado interno */
-    }
-
-    .productos-box img {
-        height: 150px; /* Reduce la altura de las imágenes */
-    }
-
-    .price {
-        font-size: 12px; /* Ajusta el tamaño del texto del precio */
-    }
-
-    .comprar-btn {
-        padding: 8px 10px; /* Reduce el tamaño del botón */
-        font-size: 12px; /* Ajusta el tamaño del texto */
+        flex-basis: 100%;
+        margin-bottom: 14px;
     }
 }

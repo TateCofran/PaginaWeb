@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 infoContainer.classList.add('info-container');
                 infoContainer.innerHTML = `
                     <h3>${product.titulo}</h3>
-                    <p>${product.pack}<p>
+                    <p>${product.pack ? product.pack : 'Precio por unidad'}</p>
                     <h3>$${product.precio}</h3>
                     <div class="product-actions">
                         <button class="more-details" onclick="redirectToDetails('${product.titulo}', ${product.precio}, '${product.id}')">
@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </button>
                     </div>
                 `;
+
        
                 // Agregar contenedores al producto
                 productElement.appendChild(imageContainer);
