@@ -186,6 +186,16 @@ function updateMainVideo(videoSrc) {
     videoElement.controls = true;
     videoElement.autoplay = true;
     videoElement.classList.add('product-video');
+    videoElement.volume = 0;
+    videoElement.setAttribute('muted', '');
+
+    // Siempre mantenerlo muteado aunque toquen el volumen
+    videoElement.addEventListener('volumechange', () => {
+        if (!videoElement.muted || videoElement.volume !== 0) {
+            videoElement.muted = true;
+            videoElement.volume = 0;
+        }
+    });
 
     mainContainer.appendChild(videoElement);
 }
