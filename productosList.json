@@ -119,6 +119,20 @@
         "cantidadMinima": 1,
         "cantidadMaxima": 10  
     },
+        {        
+        "id": "bolsas-festeja-la-vida-",
+        "titulo": "Bolsas Festeja la vida",
+        "images": "images/products/bolsas-festeja-la-vida-/",
+        "precio": 9860,
+        "descripcion": "Medidas: 20cm de alto y 20cm de ancho aprox.",
+        "descripcion2": "Material: Tela Color Crudo con manija de colores.",
+        "colores": {
+            "manijas": ["Celeste","Lila", "Amarillo", "Rosa", "Verde"]
+        },
+        "pack": "Pack de 10 bolsas",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10  
+    },
     {
         "id": "ositos-sorbetes",
         "titulo": "Ositos con Sorbetes",
@@ -268,6 +282,42 @@
         "pack": "Pack de 10 bolsas",
         "cantidadMinima": 1,
         "cantidadMaxima": 10  
+    },
+    {
+        "id": "bolsas-arpilleras-20x13-puntilla-",
+        "titulo": "Bolsas arpilleras 20x13 con puntilla",
+        "images": "images/products/bolsas-arpilleras-20x13-puntilla-/",
+        "precio": 8190,
+        "descripcion": "Medidas: 20cm de alto y 13cm de ancho aprox.",
+        "descripcion2": "Material: Arpillera. Hilo para ajustar de Yute",
+        "pack": "Pack de 10 bolsas",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10  
+    },
+        {
+        "id": "bolsas-arpilleras-20x13-simple-",
+        "titulo": "Bolsas arpilleras 20x13 Simples",
+        "images": "images/products/bolsas-arpilleras-20x13-simple-/",
+        "precio": 8090,
+        "descripcion": "Medidas: 20cm de alto y 13cm de ancho aprox.",
+        "descripcion2": "Material: Arpillera. Hilo para ajustar de Yute",
+        "pack": "Pack de 10 bolsas",
+        "cantidadMinima": 1,
+        "cantidadMaxima": 10  
+    },
+    {
+    "id": "bolsas-arpilleras-15x13-manijas-",
+    "titulo": "Bolsas arpilleras 15x13 c/ manijas",
+    "images": "images/products/bolsas-arpilleras-15x13-manijas-/",
+    "precio": 6600,
+    "descripcion": "Medidas: 15cm de alto y 13cm de ancho aprox.",
+    "descripcion2": "Material: Arpillera.",
+    "colores": {
+        "soga": ["Celeste", "Amarillo", "Lila, Verde, Rosa "]
+    },
+    "pack": "Pack de 10 bolsas",
+    "cantidadMinima": 1,
+    "cantidadMaxima": 10  
     },
     {
         "id": "bolsas-papel",

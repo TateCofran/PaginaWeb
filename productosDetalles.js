@@ -2,11 +2,15 @@ let minQuantity = 1;
 let maxQuantity = 100;
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('loading-overlay').style.display = 'flex';
+
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id'); // ID del producto
 
     if (!productId) {
         console.error('Error: Falta información del producto en los parámetros de la URL.');
+        // Ocultar loader si hay error de URL
+        document.getElementById('loading-overlay').innerHTML = "<p>Error: Producto no especificado.</p>";
         return;
     }
 // Cargar datos del JSON
@@ -121,8 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             configureButtons(product, quantityInput);
+            setTimeout(() => {
+                document.getElementById('loading-overlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loading-overlay').style.display = 'none';
+                }, 400);
+            }, 200);
         })
         .catch(error => {
+            document.getElementById('loading-overlay').innerHTML = "<p>Error al cargar los datos del producto.</p>";
             console.error('Error al cargar los datos del producto:', error);
         });
 });

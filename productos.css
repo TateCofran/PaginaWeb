@@ -43,20 +43,30 @@ body::before {
 /* Sección de Productos */
 .products-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 columnas */
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    transition: grid-template-columns 0.3s;
 }
 
 .product-item {
-    background-color: transparent; /* Fondo transparente general */
+    background-color: #fff; /* Fondo blanco real */
     border-radius: 10px;
     text-align: center;
     overflow: hidden; /* Asegura que el contenido no se desborde */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 0; /* importante para grids */
+}
+
+.product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
 }
 
 .product-item:hover {
@@ -65,16 +75,18 @@ body::before {
 }
 
 .image-container {
-    background-color: rgba(253, 228, 207, 1); /* Fondo crema */
-    width: 300px; /* Ancho fijo */
-    height: 400px; /* Altura fija */
-    display: flex; /* Para centrar la imagen si es más pequeña */
+    background-color: rgba(253, 228, 207, 1);
+    width: 100%;             /* Hace que ocupe todo el ancho de la tarjeta */
+    aspect-ratio: 3/4;       /* Mantiene proporción vertical (como 300x400) */
+    display: flex;
     justify-content: center;
     align-items: center;    
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    overflow: hidden; /* Asegura que la imagen no se desborde */
-    margin: 0 auto; /* Centra el contenedor en el eje horizontal */
+    overflow: hidden;
+    margin: 0 auto;
+    min-height: 0;           /* Previene errores en mobile */
+    min-width: 0;
 }
 
 .product-item img {
@@ -145,7 +157,142 @@ body::before {
 }
 
 
+.products-container.x3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+.products-container.x4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+.products-container.x5 {
+    grid-template-columns: repeat(5, 1fr) !important;
+}
+.products-page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.products-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 2px 0;
+    padding-right: 0;
 
+    margin-right: 2%;
+
+}
+
+.products-toolbar .view-mode-btn {
+    margin-left: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.products-toolbar .view-mode-btn.active {
+    background: #007bff;
+    color: #fff;
+}
+
+.toolbar-label {
+    font-weight: bold;
+    margin-right: 8px;
+    color: #222;
+}
+
+.view-mode-icons {
+    display: flex;
+    gap: 6px;
+}
+
+.view-mode-icon {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 7px;
+    padding: 3px 5px;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s;
+    color: #888;
+    outline: none;
+    position: relative;
+}
+
+.view-mode-icon:hover,
+.view-mode-icon:focus {
+    background: #e0e9ff;
+    color: #007bff;
+}
+
+.view-mode-icon.active {
+    background: #007bff;
+    color: #fff;
+    box-shadow: 0 2px 8px 0 #007bff44;
+}
+
+.view-mode-icon svg {
+    display: block;
+    margin: 0 auto;
+}
+.sort-mode-group {
+    display: inline-flex;
+    gap: 4px;
+    margin-right: 24px;
+    vertical-align: middle;
+}
+.sort-mode-btn {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 7px;
+    padding: 5px 12px;
+    cursor: pointer;
+    color: #222;
+    font-weight: 500;
+    font-size: 1em;
+    transition: background 0.18s, color 0.18s;
+    outline: none;
+}
+.sort-mode-btn.active {
+    background: #007bff;
+    color: #fff;
+}
+.sort-mode-btn:hover, .sort-mode-btn:focus {
+    background: #e0e9ff;
+    color: #007bff;
+}
+
+@media (max-width: 600px) {
+    .products-toolbar {
+        margin: 15px 0 0 0;
+        justify-content: center;
+    }
+}
+#loading-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s;
+}
+.spinner {
+  border: 6px solid #e3e3e3;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 60px; height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
 
 /* Responsividad */
 @media (max-width: 1000px) {
@@ -159,3 +306,5 @@ body::before {
         grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
     }
 }
+
+

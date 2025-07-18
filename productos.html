@@ -33,6 +33,9 @@
   gtag('config', 'G-X4QEGL1QY9');
 </script>
 <body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
     <!-- Navbar -->
     <header class="main-header">
         <div class="nav-container">
@@ -67,9 +70,52 @@
     <!-- Contenido principal -->
     <main>
         <h1 class="page-title">Productos</h1>
-        <div class="products-container" id="products-container">
-            <!-- Los productos se generarán dinámicamente aquí -->
+        <div class="products-page-wrapper">
+
+            <div class="products-toolbar">
+                 <span class="toolbar-label"></span>
+                <div class="sort-mode-group">
+                    <button class="sort-mode-btn active" data-sort="alphabetic">A-Z</button>
+                    <button class="sort-mode-btn" data-sort="price-asc">Menor precio</button>
+                    <button class="sort-mode-btn" data-sort="price-desc">Mayor precio</button>
+                </div>
+                <div class="view-mode-icons">
+        <button class="view-mode-icon" data-cols="3" aria-label="Ver 3 columnas">
+            <!-- Icono 3 columnas -->
+            <svg width="26" height="20" viewBox="0 0 26 20"><g>
+                <rect x="1" y="2" width="6" height="16" rx="2" fill="currentColor"/>
+                <rect x="10" y="2" width="6" height="16" rx="2" fill="currentColor"/>
+                <rect x="19" y="2" width="6" height="16" rx="2" fill="currentColor"/>
+            </g></svg>
+        </button>
+        <button class="view-mode-icon" data-cols="4" aria-label="Ver 4 columnas">
+            <!-- Icono 4 columnas -->
+            <svg width="30" height="20" viewBox="0 0 30 20"><g>
+                <rect x="1" y="2" width="5" height="16" rx="2" fill="currentColor"/>
+                <rect x="8" y="2" width="5" height="16" rx="2" fill="currentColor"/>
+                <rect x="15" y="2" width="5" height="16" rx="2" fill="currentColor"/>
+                <rect x="22" y="2" width="5" height="16" rx="2" fill="currentColor"/>
+            </g></svg>
+        </button>
+        <button class="view-mode-icon" data-cols="5" aria-label="Ver 5 columnas">
+            <!-- Icono 5 columnas -->
+            <svg width="34" height="20" viewBox="0 0 34 20"><g>
+                <rect x="1" y="2" width="4" height="16" rx="2" fill="currentColor"/>
+                <rect x="8" y="2" width="4" height="16" rx="2" fill="currentColor"/>
+                <rect x="15" y="2" width="4" height="16" rx="2" fill="currentColor"/>
+                <rect x="22" y="2" width="4" height="16" rx="2" fill="currentColor"/>
+                <rect x="29" y="2" width="4" height="16" rx="2" fill="currentColor"/>
+            </g></svg>
+        </button>
+                </div>
+            </div>
+
+
+            <div class="products-container" id="products-container">
+                <!-- Los productos se generarán dinámicamente aquí -->
+            </div>
         </div>
+
     </main>
 </body>
         <!-- Botón de WhatsApp -->
