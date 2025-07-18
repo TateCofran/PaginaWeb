@@ -294,17 +294,25 @@ body::before {
   100% {transform: rotate(360deg);}
 }
 
-/* Responsividad */
-@media (max-width: 1000px) {
-    .products-container {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
-    }
+/* Ocultar SOLO en celulares (max 600px) el cambio de columnas */
+@media (max-width: 600px) {
+  .view-mode-icons {
+    display: none !important;
+  }
+  /* Extra: forzar 1 columna aunque tenga clase x3/x4/x5 */
+  .products-container,
+  .products-container.x3,
+  .products-container.x4,
+  .products-container.x5 {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-@media (max-width: 480px) {
-    .products-container {
-        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
-    }
+/* (Opcional) Grilla flexible para tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .products-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
 }
-
-
